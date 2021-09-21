@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
-
+import { Message } from './Message';
 @Injectable()
 export class MessageService {
     
-    private messages :any  =[
+    private messages : Message[] = [
         {
             id: 1,
             texto: "primeira mensagem"
@@ -19,13 +19,13 @@ export class MessageService {
     findeById(id:number){
         return this.messages.find(message => message.id === id);
     }
-    create(message:{id:number,texto:string}) {
+    create(message:Message) {
         this.messages.push(message);
         return "mensagem adicionada";
     }
-    update(body: any, id: number) {
-        const index = this.messages.findIndex(message => message.id === id);
-        this.messages[index].texto = body.texto;
+    update(message: Message, id: number) {
+        const index = this.messages.findIndex(actualMessage => actualMessage.id === id);
+        this.messages[index].texto = message.texto;
         return "mensagem atualizada com sucesso";
     }
     delete(id:Number){

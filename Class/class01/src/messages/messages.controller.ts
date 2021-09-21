@@ -1,5 +1,6 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
-import { MessageService } from './MessageService';
+import { MessageService } from './message.service';
+import { Message } from './Message';
 @Controller('messages')
 export class MessagesController {
     constructor(private readonly messageService: MessageService) {}
@@ -12,12 +13,12 @@ export class MessagesController {
         return this.messageService.findeById(+params.id);
     }
     @Post()
-    create(@Body() body:any){
-        return this.messageService.create(body);
+    create(@Body() message:Message){
+        return this.messageService.create(message);
     }
     @Put(':id')
-    update(@Body() body:any,@Param() params){
-        return this.messageService.update(body,+params.id);
+    update(@Body() message:Message,@Param() params){
+        return this.messageService.update(message,+params.id);
     }
     @Delete(':id')
     delete(@Param() params){
