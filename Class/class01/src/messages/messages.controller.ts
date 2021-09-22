@@ -1,6 +1,9 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
-import { MessageService } from './message.service';
+import { Body, Controller, Delete, Get, NotFoundException, Param, Post, Put } from '@nestjs/common';
+import { MessageService } from './messages.service';
+import { NotFoundError } from 'rxjs';
 import { Message } from './Message';
+import { MessageDto } from './MessageDto';
+
 @Controller('messages')
 export class MessagesController {
     constructor(private readonly messageService: MessageService) {}
@@ -10,15 +13,17 @@ export class MessagesController {
     }
     @Get(':id')
     getById(@Param() params){
-        return this.messageService.findeById(+params.id);
+        return this.messageService.findeById(+params.id).catch((e)=>{
+            throw new NotFoundException(e.message);
+        });
     }
     @Post()
-    create(@Body() message:Message){
-        return this.messageService.create(message);
+    create(@Body() messageDto: MessageDto){
+        return this.messageService.create(messageDto);
     }
     @Put(':id')
-    update(@Body() message:Message,@Param() params){
-        return this.messageService.update(message,+params.id);
+    update(@Param() params,@Body() messageDto:MessageDto){
+        return this.messageService.update(+params.id,messageDto);
     }
     @Delete(':id')
     delete(@Param() params){
