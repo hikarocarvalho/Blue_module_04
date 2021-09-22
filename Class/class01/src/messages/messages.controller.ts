@@ -8,7 +8,7 @@ import { MessageDto } from './MessageDto';
 export class MessagesController {
     constructor(private readonly messageService: MessageService) {}
     @Get()
-    getMessage():any{
+    getMessage(){
         return this.messageService.findAll();
     }
     @Get(':id')
