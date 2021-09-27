@@ -7,16 +7,16 @@ import { UpdateGenderDto } from './dto/update-gender.dto';
 export class GenderService {
   constructor (private readonly prisma:PrismaService){}
   private readonly _include={
-    games:{
-      Select:{
+    game:{
+      select:{
         game:true,
       }
     }
   };
-  create(createGenderDto: CreateGenderDto) {
+  create(data: CreateGenderDto) {
     return this.prisma.gender.create({
-      createGenderDto,
-      include:this._include,
+      include: this._include,
+      data,
     });
   }
 
@@ -31,10 +31,10 @@ export class GenderService {
     });
   }
 
-  update(id: number, updateGenderDto: UpdateGenderDto) {
+  update(id: number, data: UpdateGenderDto) {
     return this.prisma.gender.update({
       where:    {id},
-      updateGenderDto,
+      data,
       include:  this._include,
     });
   }

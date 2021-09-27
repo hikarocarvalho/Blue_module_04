@@ -20,9 +20,9 @@ export class PerfilService {
     }
   }
 
-  create(createPerfilDto: CreatePerfilDto) {
+  create(data: CreatePerfilDto) {
     return this.prisma.perfil.create({
-      createPerfilDto,
+      data,
       include:this._include
     });
   }
@@ -38,10 +38,10 @@ export class PerfilService {
     });
   }
 
-  update(id: number, updatePerfilDto: UpdatePerfilDto) {
+  update(id: number, data: UpdatePerfilDto) {
     return this.prisma.perfil.update({
       where:          {id},
-      updatePerfilDto,
+      data,
       include:        this._include,
     });
   }

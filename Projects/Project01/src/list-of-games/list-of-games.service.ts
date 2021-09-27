@@ -10,29 +10,18 @@ export class ListOfGamesService {
     user:{
       select:{
         name: true,
-        lastName: true,
-        email: true,
-        password: true,
-        CPF: true,
       }
     },
     game:{
       select:{
-        title: true,
-        folder: true,
-        description: true,
-        year: true,
-        score: true,
-        youtubeUrl: true,
-        gamePlayUrl: true,
-        gender: true,
+       title: true,
       }
     }
   }
-  create(createListOfGameDto: CreateListOfGameDto) {
+  create(data: CreateListOfGameDto) {
     return this.prisma.listOfGames.create({
-      createListOfGameDto,
-      include: this._include
+      include: this._include,
+      data,
     });
   }
 
@@ -46,10 +35,10 @@ export class ListOfGamesService {
     });
   }
 
-  update(id: number, updateListOfGameDto: UpdateListOfGameDto) {
+  update(id: number, data: UpdateListOfGameDto) {
     return this.prisma.listOfGames.update({
       where:    {id},
-      updateListOfGameDto,
+      data,
     });
   }
 

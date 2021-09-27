@@ -18,11 +18,12 @@ export class GamesService {
       }
     }
   };
-  create(createGameDto: CreateGameDto) {
+  create(data: CreateGameDto) {
     return this.prisma.games.create({
-      createGameDto,
       include: this._include,
+      data,
     });
+    
   }
 
   findAll() {
@@ -36,10 +37,10 @@ export class GamesService {
     });
   }
 
-  update(id: number, updateGameDto: UpdateGameDto) {
+  update(id: number, data: UpdateGameDto) {
     return this.prisma.games.update({
       where:      {id},
-      updateGameDto,
+      data,
       include:    this._include,
     });
   }
