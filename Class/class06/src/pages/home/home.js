@@ -1,13 +1,8 @@
 import React from "react";
-import { ListItems } from "../../components/listItems/ListItems";
-
+import Pokedex from "../../components/pokedex/Pokedex";
+import "./Home.css"
 export default function Home(){
     return (
-        <h1>
-            <ListItems>
-                
-            </ListItems>
-
-        </h1>
+        <Pokedex></Pokedex>
     );
 }

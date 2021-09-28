@@ -4,18 +4,16 @@ import {BrowserRouter as Router, Link} from "react-router-dom";
 import Routes from './routes';
 function App() {
   return (
-    <div className="App">
-      <Router>
-          <ul>
+      <Router className="App">      
+      <ul>
             <li>
               <Link to="/">home</Link>
               <Link to="/about">about</Link>
               <Link to="/dashboard">dashboard</Link>
             </li>
-          </ul>
-        <Routes></Routes>
+      </ul>
+      <Routes></Routes>
       </Router>
-    </div>
   );
 }
 

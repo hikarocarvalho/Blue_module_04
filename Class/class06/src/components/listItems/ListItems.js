@@ -1,6 +1,8 @@
 import React,{useState,useEffect} from "react";
 import { Api } from '../../api/Api';
-export const ListItems = () => {
+import "./ListItems.css";
+import Item from './../item/Item';
+export default function ListItems (){
     const [pokemons,setPokemons] = useState([]);
     useEffect(()=>{
         const loadData = async () =>{
@@ -13,10 +15,15 @@ export const ListItems = () => {
     },[])
 
     return(
-        <div>
-            {pokemons.map ((pokemon,index)=>(
-                <div>{pokemon.name}</div>
-            ))}
-        </div>
+        <article className="center">
+                    <div className="display-armature">
+                        <div className="display">
+                        {pokemons.map ((pokemon,index)=>(
+                            <Item pokemon={pokemon}></Item>
+                        ))}
+                        </div>
+                    </div>
+        </article>
+            
     );
 }

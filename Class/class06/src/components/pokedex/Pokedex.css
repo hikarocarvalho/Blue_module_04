@@ -1,0 +1,216 @@
+.center,.display-armature,.left,.controller,.round-button-armature,.right{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+.pokedex{
+    width: 80%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+}
+.layer{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+.left,.right{
+    background-color: red;
+    
+    height:50%;
+}
+.left,.right,.center{
+    box-shadow: 0px 5px 5px 1px black;
+}
+.left{
+    border-radius: 50% 0 0 50%;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right{
+    border-radius: 0 50% 50% 0;
+    z-index: -1;
+}
+.center{
+    height:70%;
+    background-color:red;
+    width: 60%;
+    flex-direction: column;
+}
+.display-armature{
+    background-color: white;
+    box-shadow: 0 0 10px 0 black;
+    width: 80%;
+    height:80%;
+}
+.display{
+    width: 85%;
+    height: 80%;
+    border-radius: 20px;
+    background-color: rgb(143, 180, 248);
+    box-shadow: 0 0 5px 0 black;
+}
+
+/* directional buttons */
+.controller{
+    width: 200px;
+    height: 200px;
+    display: flex;
+}
+.up-button,.down-button,.left-button,.right-button,.separator{
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+.up-button,.down-button,.left-button,.right-button{
+    box-shadow: 0px 0px 10px 0px white;
+    z-index: 1;
+}
+.up-down{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.up-button,.down-button{
+    width: 100%;
+    height: 40%;
+}
+.separator{
+    width: 100%;
+    height: 20%;
+    z-index: 2;
+}
+.up-button{
+    border-radius: 20px 20px 0 0;
+}
+.down-button{
+    border-radius: 0 0 20px 20px;
+}
+.left-button,.right-button{
+    width: 40%;
+    height: 20%;
+}
+.left-button{
+    border-radius: 20px 0 0 20px;
+}
+.right-button{
+    border-radius: 0 20px 20px 0;
+}
+
+/* round button */
+
+.round-button-armature{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color:white;
+    box-shadow: 0 0 10px 0 black;
+    margin: 20px;
+}
+.round-button{
+    width: 90%;
+    height: 90%;
+    background-color: black;
+    border-radius: 50%;
+    box-shadow: 0 0 20px 0 black;
+}
+/* animation */
+@-webkit-keyframes spinner {
+    from { -webkit-transform: rotateY(540deg);    }
+    to   { -webkit-transform: rotateY(-360deg); }
+  }
+
+  /* all other browsers */
+  @keyframes spinner {
+    from {
+      -moz-transform: rotateX(540deg);
+      -ms-transform: rotateX(540deg);
+      transform: rotateX(540deg);
+    }
+    to {
+      -moz-transform: rotateX(-360deg);
+      -ms-transform: rotateX(-360deg);
+      transform: rotateX(-360deg);
+    }
+  }
+#stage {
+    margin: 1em auto;
+    -webkit-perspective: 1200px;
+    -moz-perspective: 1200px;
+    -ms-perspective: 1200px;
+    perspective: 1200px;
+  }
+#spinner {
+    
+    -webkit-animation-name: spinner;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 2s;
+
+    animation-name: spinner;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+/*
+  #spinner:hover {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+  }
+   */
+.layer0{
+    transform:translateZ(30px);
+}
+.layer-block .center{
+    background-color: black;
+    height: 20px;
+}
+.layer-block{
+    transform:rotateX(90deg) translateZ(150px) translateY(12px);
+
+}
+.layer0{
+    transform:translateZ(30px);
+}
+.layer1{
+    transform:translateZ(25px);
+}
+.layer2{
+    transform:translateZ(20px);
+}
+.layer3{
+    transform:translateZ(10px);
+}
+.layer4{
+    transform:translateZ(5px);
+}
+.layer5{
+    transform:translateZ(0px);
+}
+.layer1 .right,.layer1 .left,.layer1 .center,
+.layer2 .right,.layer2 .left,.layer2 .center,
+.layer3 .right,.layer3 .left,.layer3 .center,
+.layer4 .right,.layer4 .left,.layer4 .center{
+    background-color: black;
+}
