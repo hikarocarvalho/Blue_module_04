@@ -5,7 +5,7 @@ import ListItems from "../listItems/ListItems";
 export default function Pokedex(){
     return (
         <section id="spinner" className="pokedex">
-            <div className="layer">
+            <div className="layer0 layer">
                 <Controlls>
 
                 </Controlls>
@@ -21,7 +21,17 @@ export default function Pokedex(){
                     </div>
                 </article>
             </div>
- 
+            <div className="layer5 layer">
+                <article className="left">
+                   
+                </article>
+                <article className="center">
+                   
+                </article>
+                <article className="right">
+                    
+                </article>
+            </div>
               
         </section>
     );

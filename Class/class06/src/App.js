@@ -6,11 +6,19 @@ function App() {
   return (
       <Router className="App">      
       <ul>
-            <li>
-              <Link to="/">home</Link>
-              <Link to="/about">about</Link>
-              <Link to="/dashboard">dashboard</Link>
-            </li>
+            
+              <li>
+                <Link to="/">home</Link>
+              </li>
+              <hr/>
+              <li> 
+                <Link to="/about">about</Link>
+              </li>
+              <hr/>
+              <li> 
+                <Link to="/dashboard">dashboard</Link>
+              </li>
+            
       </ul>
       <Routes></Routes>
       </Router>
