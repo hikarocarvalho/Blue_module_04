@@ -1,0 +1,51 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to bottom right,#264653, #2a9d8f,#264653);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.gallery-container{
+    width: 98%;
+    height: 98%;
+    margin: 0;
+    padding: 0;
+    
+}
+.gallery{
+    width: 60%;
+    height: 60%;
+    margin: 0;
+    padding: 0;
+    color: #2a9d8f;
+}
+.gallery-item{
+    min-width: 50%;
+    min-height: 50%;
+    background-image: url(https://www.pinclipart.com/picdir/big/565-5657886_avatar-images-for-login-form-clipart.png);
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #264653;
+}
+.gallery-item:hover{
+    box-shadow: 0px 0px 20px 0px #e9c46a;
+}
+.gallery-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+.options{
+    font-weight: bolder;
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
