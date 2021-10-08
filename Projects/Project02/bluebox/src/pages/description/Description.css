@@ -1,4 +1,4 @@
-.box{
+.description-box{
     width: 100%;
     height: 100%;
     display: flex;
@@ -13,25 +13,22 @@
     font-weight: bolder;
 
 }
-.item{
+.description-item{
     margin: 0;
     padding: 0;
     width: auto;
     height: 80%;
     background-color: #264653;
-    box-shadow: 0 0 0 0 transparent;
 }
-.item:hover,.preview:hover{
-    box-shadow: 0 0 0 0 transparent;
-}
-.preview{
+
+.description-item .preview{
     height: 100%;
     width: auto;
     margin: 0;
     padding: 0;
 
 }
-.description{
+.description-text{
     margin: 0;
     display: flex;
     flex-direction: column;
