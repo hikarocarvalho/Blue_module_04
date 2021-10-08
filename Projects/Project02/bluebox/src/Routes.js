@@ -6,6 +6,7 @@ import Perfil from "./pages/perfil/Perfil";
 import Manager from "./pages/manager/Manager";
 import Library from "./pages/library/Library";
 import NotFound from "./pages/notFound/NotFound";
+import Description from "./pages/description/Description";
 export default function Routes(){
     return(
         <Switch>
@@ -23,6 +24,9 @@ export default function Routes(){
             </Route>
             <Route exact path="/manager">
                 <Manager></Manager>
+            </Route>
+            <Route exact path="/description/:id">
+               <Description></Description>
             </Route>
             <Route path="*">
                 <NotFound></NotFound>
