@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "./logo.png";
+import Logo from "./../../logo.png";
 import "./Login.css";
 import Form from "../../components/fom/Form";
 import Input from "../../components/input/Input";

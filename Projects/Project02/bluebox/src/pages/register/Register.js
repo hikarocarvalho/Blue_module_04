@@ -1,6 +1,6 @@
 import React from "react";
 import "./Register.css";
-import Logo from "./../login/logo.png";
+import Logo from "./../../logo.png";
 import Form from "../../components/fom/Form";
 import Input from "../../components/input/Input";
 import ImageContainer from "../../components/imagecontainer/ImageContainer";
