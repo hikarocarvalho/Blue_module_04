@@ -5,6 +5,7 @@ import Register from "./pages/register/Register";
 import Perfil from "./pages/perfil/Perfil";
 import Manager from "./pages/manager/Manager";
 import Library from "./pages/library/Library";
+import Store from "./pages/store/Store";
 import NotFound from "./pages/notFound/NotFound";
 import Description from "./pages/description/Description";
 export default function Routes(){
@@ -21,6 +22,9 @@ export default function Routes(){
             </Route>
             <Route exact path="/library">
                 <Library></Library>
+            </Route>
+            <Route exact path="/store">
+                <Store></Store>
             </Route>
             <Route exact path="/manager">
                 <Manager></Manager>
