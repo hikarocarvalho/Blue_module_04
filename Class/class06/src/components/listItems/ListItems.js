@@ -13,7 +13,6 @@ export default function ListItems (){
         }
         loadData();
     },[])
-
     return(
         <article className="center">
                     <div className="display-armature">
