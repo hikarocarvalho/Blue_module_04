@@ -13,8 +13,7 @@ export default function Store(){
         const loadGames = async () =>{
             const response = await GamesApi.buildGamesApiGetRequest(GamesApi.readAllUrl());
             const res = await response.json();
-            const results = res.results;
-            setGames(results);
+            setGames(res);
             
         }
         loadGames();
