@@ -1,3 +1,4 @@
+// This component create a default form structure to this system
 import React from "react";
 import "./Form.css";
 

@@ -1,3 +1,4 @@
+// this is the register page, where you make the new account register
 import React from "react";
 import "./Register.css";
 import Logo from "./../../logo.png";

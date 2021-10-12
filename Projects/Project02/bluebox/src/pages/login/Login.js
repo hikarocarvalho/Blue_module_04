@@ -1,3 +1,4 @@
+// This code is from login page
 import React from "react";
 import Logo from "./../../logo.png";
 import "./Login.css";
