@@ -5,7 +5,7 @@ import ContentLibrary from "../../components/contentLibrary/Contentlibrary";
 import Item from "../../components/Item/Item";
 import Label from "../../components/label/Label";
 import ContentGenre from "../../components/contentGenre/ContentGenre";
-import { GamesApi } from "../../Api/GamesApi";
+import { Api } from "../../Api/Api";
 import "./Store.css";
 export default function Store(){
     // Create one variable to implements useState
@@ -13,7 +13,7 @@ export default function Store(){
     // Create the implementation for useEffect hoock to call the values from web server api
     useEffect(()=>{
         const loadGames = async () =>{
-            const response = await GamesApi.buildGamesApiGetRequest(GamesApi.readAllUrl());
+            const response = await Api.buildApiGetRequest(Api.readAllGamesUrl());
             const res = await response.json();
             setGames(res);
         }
