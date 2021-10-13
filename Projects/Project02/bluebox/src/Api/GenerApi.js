@@ -1,20 +1,20 @@
-export const GamesApi = {
+export const GenerApi = {
     baseUrl:"http://localhost:3001",
 
-    //end point get 
-    readAllGamesUrl: ()=> GamesApi.baseUrl+"/games",
+    //end point get
+    readAllUrl: ()=> GenerApi.baseUrl+"/gender",
     //end point create
-    createGameUrl:()=> GamesApi.baseUrl+"/games",
+    createGener: ()=> GenerApi.baseUrl+"/gender",
     // get method
-    buildGamesApiGetRequest: url =>
+    buildGenerApiGetRequest: url =>
         fetch(url,{
             method:"GET",
         }),
     // post method
-    buildGamesApiPostRequest: (url,body) =>
+    buildGenerApiPostRequest: (url,body) =>
         fetch(url,{
-            method: "POST",
-            Headers: new Header({
+            method:"POST",
+            headers: new Header({
                 "Content-type" : "application/json",
             }),
             body: JSON.stringify(body),
