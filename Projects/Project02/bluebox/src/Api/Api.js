@@ -9,8 +9,8 @@ export const Api = {
     createPerfilUrl: ()=> Api.baseUrl+"/perfil",
 
     //end points Gener
-    readAllGenreUrl: ()=> Api.baseUrl+"/gender",
-    createGenreUrl: ()=> Api.baseUrl+"/gender",
+    readAllGenreUrl: ()=> Api.baseUrl+"/genre",
+    createGenreUrl: ()=> Api.baseUrl+"/genre",
 
     //end points Games
     readAllGamesUrl: ()=> Api.baseUrl+"/games",

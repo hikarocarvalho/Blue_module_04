@@ -6,9 +6,11 @@ import Item from "../../components/Item/Item";
 import Label from "../../components/label/Label";
 export default function ContentGenre(props){
     //start of jsx Content genre implementation 
-    const verifyGender = (game) =>{
-        game.gender.map((genre)=>{
-            if (genre.name === props.genre){
+    const verifyGenre = (game) =>{
+        
+        game.genre.map((genres)=>{
+            if (genres.genre.name === props.genre){
+                console.log("deu true")
                 return true;
             }else{
                 return false;
@@ -19,16 +21,7 @@ export default function ContentGenre(props){
         <div className={props.classname}>
             <Label classname={"genre"} text={props.genre} />
             <BoxItems classname="items">
-                {props.games.map((game)=>{
-                    if(verifyGender(game)){
-                        return(
-                            <Item key={game.id} image={game.folder} gameName={game.title} />
-                        );
-                    }else{
-                        return ("");
-                    }
-                }
-                )}
+                {props.games.map((game)=>(verifyGenre?( <Item key={game.id} image={game.folder} gameName={game.title} />):undefined))}
             </BoxItems>
         </div>
     );

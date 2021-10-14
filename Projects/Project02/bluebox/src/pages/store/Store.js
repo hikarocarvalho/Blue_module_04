@@ -15,7 +15,6 @@ export default function Store(){
     const loadGenres = async ()=>{
         const response = await Api.buildApiGetRequest(Api.readAllGenreUrl());
         const res = await response.json();
-        console.log(res);
         setGenres(res);
     }
     const loadGames = async () =>{
@@ -45,7 +44,7 @@ export default function Store(){
                 <ContentLibrary classname={"content-ext"}>
                 {/* start maping the games genders list */}
                         {genres.map((genre,index)=>(
-                            <ContentGenre key={genre.id} classname={"content"} games={games} genre={genre}/>
+                            <ContentGenre key={genre.id} classname={"content"} games={games} genre={genre.name}/>
                         ))}
                 </ContentLibrary>
             </BoxLibrary>
