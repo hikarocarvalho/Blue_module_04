@@ -10,5 +10,5 @@ export declare class Game {
     youtubeUrl?: string | null;
     gamePlayUrl?: string | null;
     users?: User[];
-    gender?: GameGenre[];
+    genre?: GameGenre[];
 }

@@ -7,9 +7,14 @@ import { UpdateGameDto } from './dto/update-game.dto';
 export class GamesService {
   constructor (private readonly prisma:PrismaService){}
   private readonly _include={
-    gender:{
+    users:{
       select:{
-        gender:true,
+        user:true,
+      }
+    },
+    genre:{
+      select:{
+        genre:true,
       }
     }
   };
@@ -18,7 +23,6 @@ export class GamesService {
       include: this._include,
       data,
     });
-    
   }
 
   findAll() {

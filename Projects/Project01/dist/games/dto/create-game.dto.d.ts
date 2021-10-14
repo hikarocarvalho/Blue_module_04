@@ -10,5 +10,5 @@ export declare class CreateGameDto extends Game {
     youtubeUrl?: string | null;
     gamePlayUrl?: string | null;
     users?: CreateUserDto[];
-    gender?: CreateGameGenreDto[];
+    genre?: CreateGameGenreDto[];
 }

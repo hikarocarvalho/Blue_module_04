@@ -30,5 +30,5 @@ export class CreateGameDto extends Game{
     users?:         CreateUserDto[];
     @IsInt()
     @IsOptional()
-    gender?:        CreateGameGenreDto[];
+    genre?:        CreateGameGenreDto[];
 }

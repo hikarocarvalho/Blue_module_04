@@ -60,6 +60,6 @@ __decorate([
     (0, class_validator_1.IsInt)(),
     (0, class_validator_1.IsOptional)(),
     __metadata("design:type", Array)
-], CreateGameDto.prototype, "gender", void 0);
+], CreateGameDto.prototype, "genre", void 0);
 exports.CreateGameDto = CreateGameDto;
 //# sourceMappingURL=create-game.dto.js.map

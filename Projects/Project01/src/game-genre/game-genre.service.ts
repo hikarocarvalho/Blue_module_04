@@ -9,9 +9,14 @@ export class GameGenreService {
   private readonly _include={
     game:{
       select:{
-        id: true,
-        gameId: true,
-        genderId: true,
+        id:true,
+        title:true,
+        folder:true,
+        description:true,
+        year:true,
+        score:true,
+        youtubeUrl:true,
+        gamePlayUrl:true,
       }
     },
     genre:{
