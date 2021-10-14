@@ -4,8 +4,8 @@ import { ListOfGames } from "../entities/list-of-game.entity";
 export class CreateListOfGameDto extends ListOfGames{
     @IsNotEmpty()
     @IsInt()
-    userId:      number | null;
+    userId:      number;
     @IsNotEmpty()
     @IsInt()
-    gameId:      number | null;
+    gameId:      number;
 }

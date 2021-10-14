@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Gender = void 0;
-const game_gender_entity_1 = require("../../game-gender/entities/game-gender.entity");
-class Gender {
+exports.Genre = void 0;
+const game_genre_entity_1 = require("../../game-gender/entities/game-genre.entity");
+class Genre {
 }
-exports.Gender = Gender;
+exports.Genre = Genre;
 //# sourceMappingURL=gender.entity.js.map

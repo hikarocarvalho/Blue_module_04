@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateGameDto = void 0;
 const class_validator_1 = require("class-validator");
-const create_game_gender_dto_1 = require("../../game-gender/dto/create-game-gender.dto");
+const create_game_genre_dto_1 = require("../../game-genre/dto/create-game-genre.dto");
 const create_user_dto_1 = require("../../users/dto/create-user.dto");
 const game_entity_1 = require("../entities/game.entity");
 class CreateGameDto extends game_entity_1.Game {

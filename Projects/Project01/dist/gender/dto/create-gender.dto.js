@@ -9,21 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateGenderDto = void 0;
+exports.CreateGenreDto = void 0;
 const gender_entity_1 = require("../entities/gender.entity");
 const class_validator_1 = require("class-validator");
-const create_game_gender_dto_1 = require("../../game-gender/dto/create-game-gender.dto");
-class CreateGenderDto extends gender_entity_1.Gender {
+const create_game_genre_dto_1 = require("../../game-gender/dto/create-game-genre.dto");
+class CreateGenreDto extends gender_entity_1.Genre {
 }
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)(),
     __metadata("design:type", String)
-], CreateGenderDto.prototype, "name", void 0);
+], CreateGenreDto.prototype, "name", void 0);
 __decorate([
     (0, class_validator_1.IsInt)(),
     (0, class_validator_1.IsOptional)(),
     __metadata("design:type", Array)
-], CreateGenderDto.prototype, "game", void 0);
-exports.CreateGenderDto = CreateGenderDto;
+], CreateGenreDto.prototype, "game", void 0);
+exports.CreateGenreDto = CreateGenreDto;
 //# sourceMappingURL=create-gender.dto.js.map

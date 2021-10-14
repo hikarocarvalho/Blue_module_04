@@ -1,6 +1,6 @@
-import { GameGender } from "src/game-gender/entities/game-gender.entity";
-export declare class Gender {
+import { GameGenre } from "src/game-gender/entities/game-genre.entity";
+export declare class Genre {
     id?: number;
     name: string;
-    game?: GameGender[];
+    game?: GameGenre[];
 }

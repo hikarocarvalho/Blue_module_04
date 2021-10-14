@@ -39,7 +39,7 @@ model Games {
   youtubeUrl  String?
   gamePlayUrl String?
   users       ListOfGames[]
-  gender      GameGender[]
+  genre      GameGenre[]
 }
 
 model ListOfGames {
@@ -50,16 +50,16 @@ model ListOfGames {
   gameId      Int
 }
 
-model GameGender{
+model GameGenre{
   id          Int       @id       @default(autoincrement())
   game        Games     @relation(fields:[gameId],references:[id],onDelete:Cascade,onUpdate:Cascade)
   gameId      Int
-  gender      Gender    @relation(fields:[genderId],references:[id],onDelete:Cascade,onUpdate:Cascade)
-  genderId    Int
+  genre      Genre    @relation(fields:[genreId],references:[id],onDelete:Cascade,onUpdate:Cascade)
+  genreId    Int
 }
 
-model Gender{
+model Genre{
   id          Int       @id       @default(autoincrement()) 
   name        String    @unique
-  game        GameGender[]
+  game        GameGenre[]
 }

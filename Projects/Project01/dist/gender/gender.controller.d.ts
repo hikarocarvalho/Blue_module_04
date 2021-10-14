@@ -1,24 +1,12 @@
-import { GenderService } from './gender.service';
-import { CreateGenderDto } from './dto/create-gender.dto';
-import { UpdateGenderDto } from './dto/update-gender.dto';
+import { GenreService } from './genre.service';
+import { CreateGenreDto } from './dto/create-genre.dto';
+import { UpdateGenreDto } from './dto/update-genre.dto';
 export declare class GenderController {
-    private readonly genderService;
-    constructor(genderService: GenderService);
-    create(createGenderDto: CreateGenderDto): import(".prisma/client").Prisma.Prisma__GenderClient<import(".prisma/client").Gender & {
-        game: {
-            game: import(".prisma/client").Games;
-        }[];
-    }>;
-    findAll(): import(".prisma/client").PrismaPromise<import(".prisma/client").Gender[]>;
-    findOne(id: number): import(".prisma/client").Prisma.Prisma__GenderClient<import(".prisma/client").Gender & {
-        game: {
-            game: import(".prisma/client").Games;
-        }[];
-    }>;
-    update(id: number, updateGenderDto: UpdateGenderDto): import(".prisma/client").Prisma.Prisma__GenderClient<import(".prisma/client").Gender & {
-        game: {
-            game: import(".prisma/client").Games;
-        }[];
-    }>;
-    remove(id: number): import(".prisma/client").Prisma.Prisma__GenderClient<import(".prisma/client").Gender>;
+    private readonly genreService;
+    constructor(genreService: GenreService);
+    create(createGenderDto: CreateGenreDto): any;
+    findAll(): any;
+    findOne(id: number): any;
+    update(id: number, updateGenreDto: UpdateGenreDto): any;
+    remove(id: number): any;
 }

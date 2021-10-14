@@ -1,6 +1,6 @@
 import { Prisma } from ".prisma/client";
 import { IsInt, IsNotEmpty, IsOptional, IsString } from "class-validator";
-import { CreateGameGenderDto } from "src/game-gender/dto/create-game-gender.dto";
+import { CreateGameGenreDto } from "src/game-genre/dto/create-game-genre.dto";
 import { CreateUserDto } from "src/users/dto/create-user.dto";
 import { Game } from "../entities/game.entity";
 export class CreateGameDto extends Game{
@@ -30,5 +30,5 @@ export class CreateGameDto extends Game{
     users?:         CreateUserDto[];
     @IsInt()
     @IsOptional()
-    gender?:        CreateGameGenderDto[];
+    gender?:        CreateGameGenreDto[];
 }

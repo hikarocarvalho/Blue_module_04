@@ -11,37 +11,38 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+var _a, _b;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GenderController = void 0;
 const common_1 = require("@nestjs/common");
-const gender_service_1 = require("./gender.service");
-const create_gender_dto_1 = require("./dto/create-gender.dto");
-const update_gender_dto_1 = require("./dto/update-gender.dto");
+const genre_service_1 = require("./genre.service");
+const create_genre_dto_1 = require("./dto/create-genre.dto");
+const update_genre_dto_1 = require("./dto/update-genre.dto");
 let GenderController = class GenderController {
-    constructor(genderService) {
-        this.genderService = genderService;
+    constructor(genreService) {
+        this.genreService = genreService;
     }
     create(createGenderDto) {
-        return this.genderService.create(createGenderDto);
+        return this.genreService.create(createGenderDto);
     }
     findAll() {
-        return this.genderService.findAll();
+        return this.genreService.findAll();
     }
     findOne(id) {
-        return this.genderService.findOne(id);
+        return this.genreService.findOne(id);
     }
-    update(id, updateGenderDto) {
-        return this.genderService.update(id, updateGenderDto);
+    update(id, updateGenreDto) {
+        return this.genreService.update(id, updateGenreDto);
     }
     remove(id) {
-        return this.genderService.remove(id);
+        return this.genreService.remove(id);
     }
 };
 __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_gender_dto_1.CreateGenderDto]),
+    __metadata("design:paramtypes", [create_genre_dto_1.CreateGenreDto]),
     __metadata("design:returntype", void 0)
 ], GenderController.prototype, "create", null);
 __decorate([
@@ -62,7 +63,7 @@ __decorate([
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number, update_gender_dto_1.UpdateGenderDto]),
+    __metadata("design:paramtypes", [Number, typeof (_a = typeof update_genre_dto_1.UpdateGenreDto !== "undefined" && update_genre_dto_1.UpdateGenreDto) === "function" ? _a : Object]),
     __metadata("design:returntype", void 0)
 ], GenderController.prototype, "update", null);
 __decorate([
@@ -74,7 +75,7 @@ __decorate([
 ], GenderController.prototype, "remove", null);
 GenderController = __decorate([
     (0, common_1.Controller)('gender'),
-    __metadata("design:paramtypes", [gender_service_1.GenderService])
+    __metadata("design:paramtypes", [typeof (_b = typeof genre_service_1.GenreService !== "undefined" && genre_service_1.GenreService) === "function" ? _b : Object])
 ], GenderController);
 exports.GenderController = GenderController;
 //# sourceMappingURL=gender.controller.js.map

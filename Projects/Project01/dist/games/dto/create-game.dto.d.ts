@@ -1,4 +1,4 @@
-import { CreateGameGenderDto } from "src/game-gender/dto/create-game-gender.dto";
+import { CreateGameGenreDto } from "src/game-genre/dto/create-game-genre.dto";
 import { CreateUserDto } from "src/users/dto/create-user.dto";
 import { Game } from "../entities/game.entity";
 export declare class CreateGameDto extends Game {
@@ -10,5 +10,5 @@ export declare class CreateGameDto extends Game {
     youtubeUrl?: string | null;
     gamePlayUrl?: string | null;
     users?: CreateUserDto[];
-    gender?: CreateGameGenderDto[];
+    gender?: CreateGameGenreDto[];
 }
