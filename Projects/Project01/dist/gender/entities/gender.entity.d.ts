@@ -1,6 +1,6 @@
-import { Prisma } from "@prisma/client";
-export declare class Gender implements Prisma.GenderUncheckedCreateInput {
+import { GameGender } from "src/game-gender/entities/game-gender.entity";
+export declare class Gender {
     id?: number;
     name: string;
-    game?: Prisma.GameGenderCreateNestedManyWithoutGenderInput;
+    game?: GameGender[];
 }

@@ -1,5 +1,4 @@
-import { Prisma } from ".prisma/client";
-export declare class ListOfGames implements Prisma.ListOfGamesUncheckedCreateInput {
+export declare class ListOfGames {
     id?: number;
     userId: number;
     gameId: number;

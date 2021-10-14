@@ -31,8 +31,7 @@ let UsersService = class UsersService {
     }
     create(data) {
         return this.prisma.users.create({
-            data,
-            include: this._include
+            data
         });
     }
     findAll() {

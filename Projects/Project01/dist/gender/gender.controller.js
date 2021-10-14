@@ -28,13 +28,13 @@ let GenderController = class GenderController {
         return this.genderService.findAll();
     }
     findOne(id) {
-        return this.genderService.findOne(+id);
+        return this.genderService.findOne(id);
     }
     update(id, updateGenderDto) {
-        return this.genderService.update(+id, updateGenderDto);
+        return this.genderService.update(id, updateGenderDto);
     }
     remove(id) {
-        return this.genderService.remove(+id);
+        return this.genderService.remove(id);
     }
 };
 __decorate([
@@ -54,7 +54,7 @@ __decorate([
     (0, common_1.Get)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", void 0)
 ], GenderController.prototype, "findOne", null);
 __decorate([
@@ -62,14 +62,14 @@ __decorate([
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, update_gender_dto_1.UpdateGenderDto]),
+    __metadata("design:paramtypes", [Number, update_gender_dto_1.UpdateGenderDto]),
     __metadata("design:returntype", void 0)
 ], GenderController.prototype, "update", null);
 __decorate([
     (0, common_1.Delete)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", void 0)
 ], GenderController.prototype, "remove", null);
 GenderController = __decorate([

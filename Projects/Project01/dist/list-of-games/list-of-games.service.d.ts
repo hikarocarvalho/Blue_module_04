@@ -6,11 +6,11 @@ export declare class ListOfGamesService {
     constructor(prisma: PrismaService);
     private readonly _include;
     create(data: CreateListOfGameDto): import(".prisma/client").Prisma.Prisma__ListOfGamesClient<import(".prisma/client").ListOfGames & {
-        game: {
-            title: string;
-        };
         user: {
             name: string;
+        };
+        game: {
+            title: string;
         };
     }>;
     findAll(): import(".prisma/client").PrismaPromise<import(".prisma/client").ListOfGames[]>;

@@ -18,17 +18,17 @@ export class GenderController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.genderService.findOne(+id);
+  findOne(@Param('id') id: number) {
+    return this.genderService.findOne(id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateGenderDto: UpdateGenderDto) {
-    return this.genderService.update(+id, updateGenderDto);
+  update(@Param('id') id: number, @Body() updateGenderDto: UpdateGenderDto) {
+    return this.genderService.update(id, updateGenderDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.genderService.remove(+id);
+  remove(@Param('id') id: number) {
+    return this.genderService.remove(id);
   }
 }

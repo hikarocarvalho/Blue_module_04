@@ -16,11 +16,12 @@ const prisma_service_1 = require("./prisma/prisma.service");
 const perfil_module_1 = require("./perfil/perfil.module");
 const gender_module_1 = require("./gender/gender.module");
 const list_of_games_module_1 = require("./list-of-games/list-of-games.module");
+const game_gender_module_1 = require("./game-gender/game-gender.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [users_module_1.UsersModule, games_module_1.GamesModule, perfil_module_1.PerfilModule, gender_module_1.GenderModule, list_of_games_module_1.ListOfGamesModule],
+        imports: [users_module_1.UsersModule, games_module_1.GamesModule, perfil_module_1.PerfilModule, gender_module_1.GenderModule, list_of_games_module_1.ListOfGamesModule, game_gender_module_1.GameGenderModule],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService, prisma_service_1.PrismaService],
     })

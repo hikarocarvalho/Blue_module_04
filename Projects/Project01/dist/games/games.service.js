@@ -16,11 +16,6 @@ let GamesService = class GamesService {
     constructor(prisma) {
         this.prisma = prisma;
         this._include = {
-            users: {
-                select: {
-                    user: true,
-                }
-            },
             gender: {
                 select: {
                     gender: true,
@@ -35,7 +30,9 @@ let GamesService = class GamesService {
         });
     }
     findAll() {
-        return this.prisma.games.findMany();
+        return this.prisma.games.findMany({
+            include: this._include
+        });
     }
     findOne(id) {
         return this.prisma.games.findUnique({

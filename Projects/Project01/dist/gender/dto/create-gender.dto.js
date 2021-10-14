@@ -11,8 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateGenderDto = void 0;
 const gender_entity_1 = require("../entities/gender.entity");
-const client_1 = require(".prisma/client");
 const class_validator_1 = require("class-validator");
+const create_game_gender_dto_1 = require("../../game-gender/dto/create-game-gender.dto");
 class CreateGenderDto extends gender_entity_1.Gender {
 }
 __decorate([
@@ -23,7 +23,7 @@ __decorate([
 __decorate([
     (0, class_validator_1.IsInt)(),
     (0, class_validator_1.IsOptional)(),
-    __metadata("design:type", Object)
+    __metadata("design:type", Array)
 ], CreateGenderDto.prototype, "game", void 0);
 exports.CreateGenderDto = CreateGenderDto;
 //# sourceMappingURL=create-gender.dto.js.map

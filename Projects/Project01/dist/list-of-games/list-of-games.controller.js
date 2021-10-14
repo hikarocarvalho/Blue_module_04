@@ -28,13 +28,13 @@ let ListOfGamesController = class ListOfGamesController {
         return this.listOfGamesService.findAll();
     }
     findOne(id) {
-        return this.listOfGamesService.findOne(+id);
+        return this.listOfGamesService.findOne(id);
     }
     update(id, updateListOfGameDto) {
-        return this.listOfGamesService.update(+id, updateListOfGameDto);
+        return this.listOfGamesService.update(id, updateListOfGameDto);
     }
     remove(id) {
-        return this.listOfGamesService.remove(+id);
+        return this.listOfGamesService.remove(id);
     }
 };
 __decorate([
@@ -54,7 +54,7 @@ __decorate([
     (0, common_1.Get)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", void 0)
 ], ListOfGamesController.prototype, "findOne", null);
 __decorate([
@@ -62,14 +62,14 @@ __decorate([
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, update_list_of_game_dto_1.UpdateListOfGameDto]),
+    __metadata("design:paramtypes", [Number, update_list_of_game_dto_1.UpdateListOfGameDto]),
     __metadata("design:returntype", void 0)
 ], ListOfGamesController.prototype, "update", null);
 __decorate([
     (0, common_1.Delete)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", void 0)
 ], ListOfGamesController.prototype, "remove", null);
 ListOfGamesController = __decorate([

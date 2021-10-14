@@ -10,15 +10,24 @@ import "./Store.css";
 export default function Store(){
     // Create one variable to implements useState
     const [games,setGames] = useState([]);
+    const [genres,setGenres] = useState([]);
     // Create the implementation for useEffect hoock to call the values from web server api
+    const loadGenres = async ()=>{
+        const response = await Api.buildApiGetRequest(Api.readAllGenreUrl());
+        const res = await response.json();
+        console.log(res);
+        setGenres(res);
+    }
+    const loadGames = async () =>{
+        const response = await Api.buildApiGetRequest(Api.readAllGamesUrl());
+        const res = await response.json();
+        setGames(res);
+    }
     useEffect(()=>{
-        const loadGames = async () =>{
-            const response = await Api.buildApiGetRequest(Api.readAllGamesUrl());
-            const res = await response.json();
-            setGames(res);
-        }
         loadGames();
+        loadGenres();
     },[]);
+    // finish useEffect implements
     // Start the implementation of the jsx from store page
     return (
         <section className="box-library">
@@ -35,7 +44,9 @@ export default function Store(){
                 <Label text={"User Games Library"} />
                 <ContentLibrary classname={"content-ext"}>
                 {/* start maping the games genders list */}
-                        <ContentGenre classname={"content"} games={games}/>
+                        {genres.map((genre,index)=>(
+                            <ContentGenre key={genre.id} classname={"content"} games={games} genre={genre}/>
+                        ))}
                 </ContentLibrary>
             </BoxLibrary>
         </section>

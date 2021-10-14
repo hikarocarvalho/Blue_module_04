@@ -22,8 +22,7 @@ export class UsersService {
   };
   create(data: CreateUserDto) {
     return this.prisma.users.create({
-      data,
-      include:this._include
+      data
     });
   }
 

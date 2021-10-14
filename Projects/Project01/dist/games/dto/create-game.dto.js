@@ -10,8 +10,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateGameDto = void 0;
-const client_1 = require(".prisma/client");
 const class_validator_1 = require("class-validator");
+const create_game_gender_dto_1 = require("../../game-gender/dto/create-game-gender.dto");
+const create_user_dto_1 = require("../../users/dto/create-user.dto");
 const game_entity_1 = require("../entities/game.entity");
 class CreateGameDto extends game_entity_1.Game {
 }
@@ -53,12 +54,12 @@ __decorate([
 __decorate([
     (0, class_validator_1.IsOptional)(),
     (0, class_validator_1.IsInt)(),
-    __metadata("design:type", Object)
+    __metadata("design:type", Array)
 ], CreateGameDto.prototype, "users", void 0);
 __decorate([
     (0, class_validator_1.IsInt)(),
     (0, class_validator_1.IsOptional)(),
-    __metadata("design:type", Object)
+    __metadata("design:type", Array)
 ], CreateGameDto.prototype, "gender", void 0);
 exports.CreateGameDto = CreateGameDto;
 //# sourceMappingURL=create-game.dto.js.map

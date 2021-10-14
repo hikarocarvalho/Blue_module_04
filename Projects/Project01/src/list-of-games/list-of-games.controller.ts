@@ -18,17 +18,17 @@ export class ListOfGamesController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.listOfGamesService.findOne(+id);
+  findOne(@Param('id') id: number) {
+    return this.listOfGamesService.findOne(id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateListOfGameDto: UpdateListOfGameDto) {
-    return this.listOfGamesService.update(+id, updateListOfGameDto);
+  update(@Param('id') id: number, @Body() updateListOfGameDto: UpdateListOfGameDto) {
+    return this.listOfGamesService.update(id, updateListOfGameDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.listOfGamesService.remove(+id);
+  remove(@Param('id') id: number) {
+    return this.listOfGamesService.remove(id);
   }
 }

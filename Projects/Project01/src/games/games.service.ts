@@ -7,11 +7,6 @@ import { UpdateGameDto } from './dto/update-game.dto';
 export class GamesService {
   constructor (private readonly prisma:PrismaService){}
   private readonly _include={
-    users:{
-      select:{
-        user:true,
-      }
-    },
     gender:{
       select:{
         gender:true,
@@ -27,7 +22,9 @@ export class GamesService {
   }
 
   findAll() {
-    return this.prisma.games.findMany();
+    return this.prisma.games.findMany({
+      include: this._include
+    });
   }
 
   findOne(id: number) {

@@ -11,8 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateUserDto = void 0;
 const class_validator_1 = require("class-validator");
-const client_1 = require("@prisma/client");
 const user_entity_1 = require("../entities/user.entity");
+const create_list_of_game_dto_1 = require("../../list-of-games/dto/create-list-of-game.dto");
+const create_perfil_dto_1 = require("../../perfil/dto/create-perfil.dto");
 class CreateUserDto extends user_entity_1.User {
 }
 __decorate([
@@ -42,11 +43,11 @@ __decorate([
 ], CreateUserDto.prototype, "CPF", void 0);
 __decorate([
     (0, class_validator_1.IsOptional)(),
-    __metadata("design:type", Object)
+    __metadata("design:type", Array)
 ], CreateUserDto.prototype, "games", void 0);
 __decorate([
     (0, class_validator_1.IsOptional)(),
-    __metadata("design:type", Object)
+    __metadata("design:type", Array)
 ], CreateUserDto.prototype, "Perfil", void 0);
 exports.CreateUserDto = CreateUserDto;
 //# sourceMappingURL=create-user.dto.js.map

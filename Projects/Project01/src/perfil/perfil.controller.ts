@@ -18,17 +18,17 @@ export class PerfilController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.perfilService.findOne(+id);
+  findOne(@Param('id') id: number) {
+    return this.perfilService.findOne(id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updatePerfilDto: UpdatePerfilDto) {
-    return this.perfilService.update(+id, updatePerfilDto);
+  update(@Param('id') id: number, @Body() updatePerfilDto: UpdatePerfilDto) {
+    return this.perfilService.update(id, updatePerfilDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.perfilService.remove(+id);
+  remove(@Param('id') id: number) {
+    return this.perfilService.remove(id);
   }
 }

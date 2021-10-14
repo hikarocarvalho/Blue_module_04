@@ -28,13 +28,13 @@ let PerfilController = class PerfilController {
         return this.perfilService.findAll();
     }
     findOne(id) {
-        return this.perfilService.findOne(+id);
+        return this.perfilService.findOne(id);
     }
     update(id, updatePerfilDto) {
-        return this.perfilService.update(+id, updatePerfilDto);
+        return this.perfilService.update(id, updatePerfilDto);
     }
     remove(id) {
-        return this.perfilService.remove(+id);
+        return this.perfilService.remove(id);
     }
 };
 __decorate([
@@ -54,7 +54,7 @@ __decorate([
     (0, common_1.Get)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", void 0)
 ], PerfilController.prototype, "findOne", null);
 __decorate([
@@ -62,14 +62,14 @@ __decorate([
     __param(0, (0, common_1.Param)('id')),
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, update_perfil_dto_1.UpdatePerfilDto]),
+    __metadata("design:paramtypes", [Number, update_perfil_dto_1.UpdatePerfilDto]),
     __metadata("design:returntype", void 0)
 ], PerfilController.prototype, "update", null);
 __decorate([
     (0, common_1.Delete)(':id'),
     __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", void 0)
 ], PerfilController.prototype, "remove", null);
 PerfilController = __decorate([

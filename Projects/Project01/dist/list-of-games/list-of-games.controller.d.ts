@@ -5,15 +5,15 @@ export declare class ListOfGamesController {
     private readonly listOfGamesService;
     constructor(listOfGamesService: ListOfGamesService);
     create(createListOfGameDto: CreateListOfGameDto): import(".prisma/client").Prisma.Prisma__ListOfGamesClient<import(".prisma/client").ListOfGames & {
-        game: {
-            title: string;
-        };
         user: {
             name: string;
         };
+        game: {
+            title: string;
+        };
     }>;
     findAll(): import(".prisma/client").PrismaPromise<import(".prisma/client").ListOfGames[]>;
-    findOne(id: string): import(".prisma/client").Prisma.Prisma__ListOfGamesClient<import(".prisma/client").ListOfGames>;
-    update(id: string, updateListOfGameDto: UpdateListOfGameDto): import(".prisma/client").Prisma.Prisma__ListOfGamesClient<import(".prisma/client").ListOfGames>;
-    remove(id: string): import(".prisma/client").Prisma.Prisma__ListOfGamesClient<import(".prisma/client").ListOfGames>;
+    findOne(id: number): import(".prisma/client").Prisma.Prisma__ListOfGamesClient<import(".prisma/client").ListOfGames>;
+    update(id: number, updateListOfGameDto: UpdateListOfGameDto): import(".prisma/client").Prisma.Prisma__ListOfGamesClient<import(".prisma/client").ListOfGames>;
+    remove(id: number): import(".prisma/client").Prisma.Prisma__ListOfGamesClient<import(".prisma/client").ListOfGames>;
 }

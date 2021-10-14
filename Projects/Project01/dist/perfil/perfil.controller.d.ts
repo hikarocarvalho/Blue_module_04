@@ -14,7 +14,7 @@ export declare class PerfilController {
         };
     }>;
     findAll(): import(".prisma/client").PrismaPromise<import(".prisma/client").Perfil[]>;
-    findOne(id: string): import(".prisma/client").Prisma.Prisma__PerfilClient<import(".prisma/client").Perfil & {
+    findOne(id: number): import(".prisma/client").Prisma.Prisma__PerfilClient<import(".prisma/client").Perfil & {
         user: {
             name: string;
             lastName: string;
@@ -23,7 +23,7 @@ export declare class PerfilController {
             CPF: string;
         };
     }>;
-    update(id: string, updatePerfilDto: UpdatePerfilDto): import(".prisma/client").Prisma.Prisma__PerfilClient<import(".prisma/client").Perfil & {
+    update(id: number, updatePerfilDto: UpdatePerfilDto): import(".prisma/client").Prisma.Prisma__PerfilClient<import(".prisma/client").Perfil & {
         user: {
             name: string;
             lastName: string;
@@ -32,5 +32,5 @@ export declare class PerfilController {
             CPF: string;
         };
     }>;
-    remove(id: string): import(".prisma/client").Prisma.Prisma__PerfilClient<import(".prisma/client").Perfil>;
+    remove(id: number): import(".prisma/client").Prisma.Prisma__PerfilClient<import(".prisma/client").Perfil>;
 }

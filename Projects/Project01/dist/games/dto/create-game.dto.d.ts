@@ -1,4 +1,5 @@
-import { Prisma } from ".prisma/client";
+import { CreateGameGenderDto } from "src/game-gender/dto/create-game-gender.dto";
+import { CreateUserDto } from "src/users/dto/create-user.dto";
 import { Game } from "../entities/game.entity";
 export declare class CreateGameDto extends Game {
     title: string;
@@ -8,6 +9,6 @@ export declare class CreateGameDto extends Game {
     score: number;
     youtubeUrl?: string | null;
     gamePlayUrl?: string | null;
-    users?: Prisma.ListOfGamesUncheckedCreateNestedManyWithoutGameInput;
-    gender?: Prisma.GameGenderUncheckedCreateNestedManyWithoutGameInput;
+    users?: CreateUserDto[];
+    gender?: CreateGameGenderDto[];
 }

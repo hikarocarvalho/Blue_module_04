@@ -10,15 +10,15 @@ export declare class GenderController {
         }[];
     }>;
     findAll(): import(".prisma/client").PrismaPromise<import(".prisma/client").Gender[]>;
-    findOne(id: string): import(".prisma/client").Prisma.Prisma__GenderClient<import(".prisma/client").Gender & {
+    findOne(id: number): import(".prisma/client").Prisma.Prisma__GenderClient<import(".prisma/client").Gender & {
         game: {
             game: import(".prisma/client").Games;
         }[];
     }>;
-    update(id: string, updateGenderDto: UpdateGenderDto): import(".prisma/client").Prisma.Prisma__GenderClient<import(".prisma/client").Gender & {
+    update(id: number, updateGenderDto: UpdateGenderDto): import(".prisma/client").Prisma.Prisma__GenderClient<import(".prisma/client").Gender & {
         game: {
             game: import(".prisma/client").Games;
         }[];
     }>;
-    remove(id: string): import(".prisma/client").Prisma.Prisma__GenderClient<import(".prisma/client").Gender>;
+    remove(id: number): import(".prisma/client").Prisma.Prisma__GenderClient<import(".prisma/client").Gender>;
 }
