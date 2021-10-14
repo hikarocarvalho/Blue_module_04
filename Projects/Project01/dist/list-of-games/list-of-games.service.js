@@ -23,7 +23,15 @@ let ListOfGamesService = class ListOfGamesService {
             },
             game: {
                 select: {
+                    id: true,
                     title: true,
+                    folder: true,
+                    description: true,
+                    year: true,
+                    score: true,
+                    youtubeUrl: true,
+                    gamePlayUrl: true,
+                    genre: true,
                 }
             }
         };
@@ -34,8 +42,11 @@ let ListOfGamesService = class ListOfGamesService {
             data,
         });
     }
-    findAll() {
-        return this.prisma.listOfGames.findMany();
+    findAll(id) {
+        return this.prisma.listOfGames.findMany({
+            where: { userId: id },
+            include: this._include,
+        });
     }
     findOne(id) {
         return this.prisma.listOfGames.findUnique({

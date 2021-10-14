@@ -14,7 +14,15 @@ export class ListOfGamesService {
     },
     game:{
       select:{
-       title: true,
+        id:true,
+        title:true,
+        folder:true,
+        description:true,
+        year:true,
+        score:true,
+        youtubeUrl:true,
+        gamePlayUrl:true,
+        genre:true,
       }
     }
   }
@@ -25,8 +33,11 @@ export class ListOfGamesService {
     });
   }
 
-  findAll() {
-    return this.prisma.listOfGames.findMany();
+  findAll(id: number) {
+    return this.prisma.listOfGames.findMany({
+      where: {userId:id},
+      include:this._include,
+    });
   }
 
   findOne(id: number) {

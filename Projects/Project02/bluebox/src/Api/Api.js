@@ -16,6 +16,8 @@ export const Api = {
     readAllGamesUrl: ()=> Api.baseUrl+"/games",
     createGameUrl:()=> Api.baseUrl+"/games",
     
+    //end points Games user list
+    readAllGamesListUrl: (id)=> Api.baseUrl+"/list-of-games/"+id,
     // get method
     buildApiGetRequest: url =>
         fetch(url,{

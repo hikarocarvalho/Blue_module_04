@@ -12,9 +12,9 @@ export class ListOfGamesController {
     return this.listOfGamesService.create(createListOfGameDto);
   }
 
-  @Get()
-  findAll() {
-    return this.listOfGamesService.findAll();
+  @Get(':id')
+  findAll(@Param('id') id: number) {
+    return this.listOfGamesService.findAll(id);
   }
 
   @Get(':id')

@@ -24,8 +24,8 @@ let ListOfGamesController = class ListOfGamesController {
     create(createListOfGameDto) {
         return this.listOfGamesService.create(createListOfGameDto);
     }
-    findAll() {
-        return this.listOfGamesService.findAll();
+    findAll(id) {
+        return this.listOfGamesService.findAll(id);
     }
     findOne(id) {
         return this.listOfGamesService.findOne(id);
@@ -45,9 +45,10 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], ListOfGamesController.prototype, "create", null);
 __decorate([
-    (0, common_1.Get)(),
+    (0, common_1.Get)(':id'),
+    __param(0, (0, common_1.Param)('id')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", void 0)
 ], ListOfGamesController.prototype, "findAll", null);
 __decorate([
