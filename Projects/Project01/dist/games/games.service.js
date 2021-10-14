@@ -18,7 +18,11 @@ let GamesService = class GamesService {
         this._include = {
             users: {
                 select: {
-                    user: true,
+                    user: {
+                        select: {
+                            id: true
+                        }
+                    }
                 }
             },
             genre: {

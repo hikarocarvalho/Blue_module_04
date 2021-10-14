@@ -7,7 +7,9 @@ export declare class GamesService {
     private readonly _include;
     create(data: CreateGameDto): import(".prisma/client").Prisma.Prisma__GamesClient<import(".prisma/client").Games & {
         users: {
-            user: import(".prisma/client").Users;
+            user: {
+                id: number;
+            };
         }[];
         genre: {
             genre: import(".prisma/client").Genre;
@@ -15,7 +17,9 @@ export declare class GamesService {
     }>;
     findAll(): import(".prisma/client").PrismaPromise<(import(".prisma/client").Games & {
         users: {
-            user: import(".prisma/client").Users;
+            user: {
+                id: number;
+            };
         }[];
         genre: {
             genre: import(".prisma/client").Genre;
@@ -23,7 +27,9 @@ export declare class GamesService {
     })[]>;
     findOne(id: number): import(".prisma/client").Prisma.Prisma__GamesClient<import(".prisma/client").Games & {
         users: {
-            user: import(".prisma/client").Users;
+            user: {
+                id: number;
+            };
         }[];
         genre: {
             genre: import(".prisma/client").Genre;
@@ -31,7 +37,9 @@ export declare class GamesService {
     }>;
     update(id: number, data: UpdateGameDto): import(".prisma/client").Prisma.Prisma__GamesClient<import(".prisma/client").Games & {
         users: {
-            user: import(".prisma/client").Users;
+            user: {
+                id: number;
+            };
         }[];
         genre: {
             genre: import(".prisma/client").Genre;

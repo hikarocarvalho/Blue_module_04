@@ -9,7 +9,11 @@ export class GamesService {
   private readonly _include={
     users:{
       select:{
-        user:true,
+        user:{
+          select:{
+            id:true
+          }
+        }
       }
     },
     genre:{
