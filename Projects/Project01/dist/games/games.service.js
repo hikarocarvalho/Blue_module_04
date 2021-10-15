@@ -16,15 +16,6 @@ let GamesService = class GamesService {
     constructor(prisma) {
         this.prisma = prisma;
         this._include = {
-            users: {
-                select: {
-                    user: {
-                        select: {
-                            id: true
-                        }
-                    }
-                }
-            },
             genre: {
                 select: {
                     genre: true,

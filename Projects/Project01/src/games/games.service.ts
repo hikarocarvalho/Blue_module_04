@@ -7,15 +7,6 @@ import { UpdateGameDto } from './dto/update-game.dto';
 export class GamesService {
   constructor (private readonly prisma:PrismaService){}
   private readonly _include={
-    users:{
-      select:{
-        user:{
-          select:{
-            id:true
-          }
-        }
-      }
-    },
     genre:{
       select:{
         genre:true,

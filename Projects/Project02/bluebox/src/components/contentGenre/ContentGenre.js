@@ -2,8 +2,8 @@
 import React from "react";
 import "./ContentGenre.css";
 import BoxItems from "../../components/boxItems/BoxItems";
-import Item from "../../components/Item/Item";
 import Label from "../../components/label/Label";
+import ItemGame from "../ItemGame/ItemGame";
 export default function ContentGenre(props){
     //start of jsx Content genre implementation 
     const verifyGenre = (game) =>{
@@ -21,7 +21,7 @@ export default function ContentGenre(props){
         <div className={props.classname}>
             <Label classname={"genre"} text={props.genre} />
             <BoxItems classname="items">
-                {props.games.map((game)=>(verifyGenre?( <Item key={game.id} image={game.folder} gameName={game.title} />):undefined))}
+                {props.games.map((game)=>(verifyGenre?( <ItemGame key={game.id} image={game.folder} gameName={game.title} gameYear={game.year} gameScore={game.score} />):undefined))}
             </BoxItems>
         </div>
     );

@@ -39,7 +39,7 @@ model Games {
   youtubeUrl  String?
   gamePlayUrl String?
   users       ListOfGames[]
-  genre      GameGenre[]
+  genre       GameGenre[]
 }
 
 model ListOfGames {

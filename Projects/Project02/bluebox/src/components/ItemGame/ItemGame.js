@@ -1,13 +1,14 @@
 // This is the component to create a box call to any item on game list from store or library
 import React from "react";
-import "./Item.css";
-import ImageContainer from "../../components/imagecontainer/ImageContainer";
-import Label from "../../components/label/Label";
-export default function Item(props){
+import "./ItemGame.css";
+import ImageContainer from "../imagecontainer/ImageContainer";
+import Label from "../label/Label";
+export default function ItemGame(props){
     // jsx item implementation 
+    console.log(props);
     return (
         <ImageContainer classname={"item"} classimage={"preview"} image={props.image}>
-            <Label classname="description" text={props.gameName} />
+            <Label classname="description" text={props.gameName+" \n "+props.gameYear} />
         </ImageContainer>
     );
 }

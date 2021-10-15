@@ -2,11 +2,11 @@
 import React,{useState,useEffect} from "react";
 import BoxLibrary from "../../components/boxLibrary/BoxLibrary";
 import ContentLibrary from "../../components/contentLibrary/Contentlibrary";
-import Item from "../../components/Item/Item";
 import Label from "../../components/label/Label";
 import ContentGenre from "../../components/contentGenre/ContentGenre";
 import { Api } from "../../Api/Api";
 import "./Store.css";
+import ItemGame from "../../components/ItemGame/ItemGame";
 export default function Store(){
     // Create one variable to implements useState
     const [games,setGames] = useState([]);
@@ -33,9 +33,9 @@ export default function Store(){
             <BoxLibrary classname={"favority-library"}>
                 <Label text={"User Favority Games"} />
                 <ContentLibrary classname={"content"}>
-                    {/* start maping the games favirity list */}
+                {/* start maping the games favirity list */}
                     {games.map((game)=>
-                    ((game.score!==0 ? (<Item key={game.id} image={game.folder} gameName={game.title} /> ) : ("")))
+                    ((game.score!==0 ? (<ItemGame key={game.id} image={game.folder} gameName={game.title} gameYear={game.year} gameScore={game.score}/> ) : ("")))
                     )}
                 </ContentLibrary>
             </BoxLibrary>
