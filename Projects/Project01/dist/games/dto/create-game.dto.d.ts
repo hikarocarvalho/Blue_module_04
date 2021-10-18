@@ -1,5 +1,5 @@
 import { CreateGameGenreDto } from "src/game-genre/dto/create-game-genre.dto";
-import { CreateUserDto } from "src/users/dto/create-user.dto";
+import { CreateListOfGameDto } from "src/list-of-games/dto/create-list-of-game.dto";
 import { Game } from "../entities/game.entity";
 export declare class CreateGameDto extends Game {
     title: string;
@@ -9,6 +9,6 @@ export declare class CreateGameDto extends Game {
     score: number;
     youtubeUrl?: string | null;
     gamePlayUrl?: string | null;
-    users?: CreateUserDto[];
+    users?: CreateListOfGameDto[];
     genre?: CreateGameGenreDto[];
 }

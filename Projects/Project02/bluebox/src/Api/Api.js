@@ -14,6 +14,7 @@ export const Api = {
 
     //end points Games
     readAllGamesUrl: ()=> Api.baseUrl+"/games",
+    readOneGameUrl: (id)=> Api.baseUrl+"/games/"+id,
     createGameUrl:()=> Api.baseUrl+"/games",
     
     //end points Games user list

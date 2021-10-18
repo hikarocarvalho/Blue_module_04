@@ -8,16 +8,16 @@ export declare class UsersService {
     create(data: CreateUserDto): import(".prisma/client").Prisma.Prisma__UsersClient<import(".prisma/client").Users>;
     findAll(): import(".prisma/client").PrismaPromise<import(".prisma/client").Users[]>;
     findOne(id: number): import(".prisma/client").Prisma.Prisma__UsersClient<import(".prisma/client").Users & {
+        perfil: never;
         games: {
             game: import(".prisma/client").Games;
         }[];
-        perfil: never;
     }>;
     update(id: number, data: UpdateUserDto): import(".prisma/client").Prisma.Prisma__UsersClient<import(".prisma/client").Users & {
+        perfil: never;
         games: {
             game: import(".prisma/client").Games;
         }[];
-        perfil: never;
     }>;
     remove(id: number): import(".prisma/client").Prisma.Prisma__UsersClient<import(".prisma/client").Users>;
 }

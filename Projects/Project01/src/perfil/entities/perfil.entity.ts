@@ -1,5 +1,5 @@
 export class Perfil{
-    id?:        number;
+    id?:        number | null;
     title:      string;
     image?:     string | null;
     userId:     number;

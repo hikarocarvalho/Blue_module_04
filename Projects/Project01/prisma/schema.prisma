@@ -33,7 +33,7 @@ model Games {
   id          Int       @id       @default(autoincrement())
   title       String    @unique
   folder      String
-  description String
+  description String    @db.VarChar(250)
   year        Int       @db.Year
   score       Int
   youtubeUrl  String?

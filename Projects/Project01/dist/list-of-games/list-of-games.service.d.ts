@@ -10,15 +10,15 @@ export declare class ListOfGamesService {
             name: string;
         };
         game: {
-            id: number;
             title: string;
+            id: number;
+            genre: import(".prisma/client").GameGenre[];
             folder: string;
             description: string;
             year: number;
             score: number;
             youtubeUrl: string;
             gamePlayUrl: string;
-            genre: import(".prisma/client").GameGenre[];
         };
     }>;
     findAll(id: number): import(".prisma/client").PrismaPromise<(import(".prisma/client").ListOfGames & {
@@ -26,15 +26,15 @@ export declare class ListOfGamesService {
             name: string;
         };
         game: {
-            id: number;
             title: string;
+            id: number;
+            genre: import(".prisma/client").GameGenre[];
             folder: string;
             description: string;
             year: number;
             score: number;
             youtubeUrl: string;
             gamePlayUrl: string;
-            genre: import(".prisma/client").GameGenre[];
         };
     })[]>;
     findOne(id: number): import(".prisma/client").Prisma.Prisma__ListOfGamesClient<import(".prisma/client").ListOfGames>;

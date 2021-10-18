@@ -1,7 +1,7 @@
 import { GameGenre } from "src/game-genre/entities/game-genre.entity";
-import { User } from "src/users/entities/user.entity";
+import { ListOfGames } from "../../list-of-games/entities/list-of-game.entity";
 export declare class Game {
-    id?: number;
+    id?: number | null;
     title: string;
     folder: string;
     description: string;
@@ -9,6 +9,6 @@ export declare class Game {
     score: number;
     youtubeUrl?: string | null;
     gamePlayUrl?: string | null;
-    users?: User[];
+    users?: ListOfGames[];
     genre?: GameGenre[];
 }

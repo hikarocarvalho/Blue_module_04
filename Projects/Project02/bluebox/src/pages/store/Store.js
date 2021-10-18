@@ -35,7 +35,7 @@ export default function Store(){
                 <ContentLibrary classname={"content"}>
                 {/* start maping the games favirity list */}
                     {games.map((game)=>
-                    ((game.score!==0 ? (<ItemGame key={game.id} image={game.folder} gameName={game.title} gameYear={game.year} gameScore={game.score}/> ) : ("")))
+                    ((game.score!==0 ? (<ItemGame key={game.id} id={game.id} image={game.folder} gameName={game.title} gameYear={game.year} gameScore={game.score}/> ) : ("")))
                     )}
                 </ContentLibrary>
             </BoxLibrary>

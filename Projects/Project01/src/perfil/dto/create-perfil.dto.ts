@@ -8,7 +8,7 @@ export class CreatePerfilDto extends Perfil{
     title:  string;
     @IsOptional()
     @IsString()
-    image?: string;
+    image?: string | null;
     @IsInt()
     @IsNotEmpty()
     userId: number;

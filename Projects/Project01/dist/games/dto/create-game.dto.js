@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateGameDto = void 0;
 const class_validator_1 = require("class-validator");
 const create_game_genre_dto_1 = require("../../game-genre/dto/create-game-genre.dto");
-const create_user_dto_1 = require("../../users/dto/create-user.dto");
+const create_list_of_game_dto_1 = require("../../list-of-games/dto/create-list-of-game.dto");
 const game_entity_1 = require("../entities/game.entity");
 class CreateGameDto extends game_entity_1.Game {
 }
