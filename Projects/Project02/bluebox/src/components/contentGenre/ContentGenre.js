@@ -14,7 +14,6 @@ export default function ContentGenre(props){
                 {props.games.map((game)=>(
                     game.genre.map((genreItem)=>{
                     if (genreItem.genre.name === props.genre){
-                    console.log(genreItem.genre.name);
                     return (<ItemGame key={game.id} id={game.id} image={game.folder} gameName={game.title} gameYear={game.year} gameScore={game.score} />);
                 
                 }else{

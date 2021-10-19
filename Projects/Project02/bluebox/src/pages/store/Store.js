@@ -43,9 +43,9 @@ export default function Store(){
                 <Label text={"User Games Library"} />
                 <ContentLibrary classname={"content-ext"}>
                 {/* start maping the games genders list */}
-                        {genres.map((genre,index)=>(
-                            <ContentGenre key={genre.id} classname={"content"} games={games} genre={genre.name}/>
-                        ))}
+                        {genres.map((genre,index)=>{
+                            return(<ContentGenre key={genre.id} classname={"content"} games={games} genre={genre.name}/>)
+                        })}
                 </ContentLibrary>
             </BoxLibrary>
         </section>

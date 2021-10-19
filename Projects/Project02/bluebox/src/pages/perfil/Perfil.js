@@ -1,144 +1,73 @@
 // this code represent the perfil chose list page
 import React,{useState,useEffect} from "react";
+import ProfileItem from "../../components/profileItem/ProfileItem";
 import "./Perfil.css";
 export default function Perfil(){
-    
-    const items = { 
-        profilesItems : [
-            document.querySelector('.item-1'),
-            document.querySelector('.item-2'),
-            document.querySelector('.item-3'),
-            document.querySelector('.item-4'),
-            document.querySelector('.item-5')
-    ],
-        transformItem :[
+    const[acounts,setAcounts] = useState([]);
+    const items =[
             "translate3d(-100px, 0px, 100px)",
             "translate3d(-50px, 0px, 50px)",
             "translate3d(0px, 0px, 0px)",
             "translate3d(50px, 0px, 50px)",
             "translate3d(100px, 0px, 100px)"
-    ],
-    // styles :{
-    //     item1:{
-    //         "z-index": "1",
-    //         transform:"translate3d(-100px, 0px, 100px)",
-    //         position: "absolute",
-    //         height: "70%",
-    //       },
-    //     item2:{
-            
-    //     }
-    // }
-};
-    const [slide, setslide] = useState(items);
-    console.log(slide);
-    let recharge = true;
-    const prevPerfil=()=>{
-        for(let countItem = 0; countItem < 5; countItem++){       
-            for(let countTransform = 0; countTransform < 5; countTransform++){
-                    if(slide.profilesItems[countItem].style.transform === slide.transformItem[countTransform]){
-                        if(countTransform === 0){
-                            slide.profilesItems[countItem].style.transform = slide.transformItem[countTransform+1];
-                            slide.profilesItems[countItem].style.zIndex = 2;
-                            slide.profilesItems[countItem].style.height = "80%";
-                            countTransform = 5;
-                        }else if(countTransform === 1){
-                            slide.profilesItems[countItem].style.transform = slide.transformItem[countTransform+1];
-                            slide.profilesItems[countItem].style.zIndex = 3;
-                            slide.profilesItems[countItem].style.height = "90%";
-                            countTransform = 5;
-                        }else if(countTransform === 2){
-                            slide.profilesItems[countItem].style.transform =  slide.transformItem[countTransform+1];
-                            slide.profilesItems[countItem].style.zIndex = 2;
-                            slide.profilesItems[countItem].style.height = "80%";
-                            countTransform = 5;
-                        }else if(countTransform === 3){
-                            slide.profilesItems[countItem].style.transform =  slide.transformItem[countTransform+1];
-                            slide.profilesItems[countItem].style.zIndex = 1;
-                            slide.profilesItems[countItem].style.height = "70%";
-                            countTransform = 5;
-                        }else if(countTransform === 4){
-                            slide.profilesItems[countItem].style.transform =  slide.transformItem[0];
-                            slide.profilesItems[countItem].style.zIndex = 1;
-                            slide.profilesItems[countItem].style.height = "70%";
-                            countTransform = 5;
-                        }
-                    }
+    ];
+    useEffect(()=>{
+        const acount = [
+            {
+                transform:items[0],
+                height:"70%",
+                zIndex:1
+            },{
+                transform:items[1],
+                height:"80%",
+                zIndex:2
+            },{
+                transform:items[2],
+                height:"90%",
+                zIndex:3
+            },{
+                transform:items[3],
+                height:"80%",
+                zIndex:2
+            },{
+                transform:items[4],
+                height:"70%",
+                zIndex:1
             }
+    ]
+    console.log(items)
+    setAcounts(acount);
+    },[]) 
+    const prevPerfil=()=>{
+        const acount = [];
+        for(let count = 1; count<5; count++){
+            acount.push(acounts[count]);
         }
+        acount.push(acounts[0]);
+        setAcounts(acount);
     }
     const nextPerfil=()=>{
-        for(let countItem = 0; countItem < 5; countItem++){    
-            for(let countTransform = 0; countTransform < 5; countTransform++){
-                    if( slide.profilesItems[countItem].style.transform ===  slide.transformItem[countTransform]){
-                        if(countTransform === 0){
-                            slide.profilesItems[countItem].style.transform =  slide.transformItem[4];
-                            slide.profilesItems[countItem].style.zIndex = 1;
-                            slide.profilesItems[countItem].style.height = "70%";
-                            countTransform = 5;
-                        }else if(countTransform === 1){
-                            slide.profilesItems[countItem].style.transform =  slide.transformItem[countTransform-1];
-                            slide.profilesItems[countItem].style.zIndex = 1;
-                            slide.profilesItems[countItem].style.height = "70%";
-                            countTransform = 5;
-                        }else if(countTransform === 2){
-                            slide.profilesItems[countItem].style.transform =  slide.transformItem[countTransform-1];
-                            slide.profilesItems[countItem].style.zIndex = 2;
-                            slide.profilesItems[countItem].style.height = "80%";
-                            countTransform = 5;
-                        }else if(countTransform === 3){
-                            slide.profilesItems[countItem].style.transform =  slide.transformItem[countTransform-1];
-                            slide.profilesItems[countItem].style.zIndex = 3;
-                            slide.profilesItems[countItem].style.height = "90%";
-                            countTransform = 5;
-                        }else if(countTransform === 4){
-                            slide.profilesItems[countItem].style.transform =  slide.transformItem[countTransform-1];
-                            slide.profilesItems[countItem].style.zIndex = 2;
-                            slide.profilesItems[countItem].style.height = "80%";
-                            countTransform = 5;
-                        }
-                    }
-            }
+        const acount = [];
+        acount.push(acounts[4]);
+        for(let count = 0; count<4; count++){
+            acount.push(acounts[count]);
         }
+        setAcounts(acount);
+        
     }
     return (
+        <div className="perfil" >
         <div className="profiles">
         <div className="profiles-container">
-            <div className="profiles-item-1 item-1" >
-                <div className="options">
-                    <label>manage</label>
-                    <label>select</label>
-                </div>
-            </div>
-            <div className="profiles-item-2 item-2" >
-                <div className="options">
-                    <label>manage</label>
-                    <label>select</label>
-                </div>
-            </div>
-            <div className="profiles-item-3 item-3" >
-                <div className="options">
-                    <label>manage</label>
-                    <label>select</label>
-                </div>
-            </div>
-            <div className="profiles-item-4 item-4" >
-                <div className="options">
-                    <label>manage</label>
-                    <label>select</label>
-                </div>
-            </div>
-            <div className="profiles-item-5 item-5" >
-                <div className="options">
-                    <label>manage</label>
-                    <label>select</label>
-                </div>
-            </div>
+            {acounts.map((acount,index)=>(
+                <ProfileItem index={index+1} style={acount} key={index+1}></ProfileItem>
+            ))}
         </div>
-        <div className="profiles-controls">
-            <button id="controls-prev" onClick={nextPerfil}>{"<"}</button>
-            <button id="controls-next" onClick={prevPerfil}>{">"}</button>
+        <div className="profiles-controls" >
+            <button id="controls-prev" onClick={prevPerfil} >{"<"}</button>
+            <button id="controls-next" onClick={nextPerfil}>{">"}</button>
         </div>
+      </div>
       </div>
     );
 }

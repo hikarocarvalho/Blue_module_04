@@ -30,16 +30,16 @@ model Perfil {
 }
 
 model Games {
-  id          Int       @id       @default(autoincrement())
-  title       String    @unique
+  id          Int           @id       @default(autoincrement())
+  title       String        @unique
   folder      String
-  description String    @db.VarChar(250)
-  year        Int       @db.Year
+  description String        @db.VarChar(250)
+  year        Int           @db.Year
   score       Int
   youtubeUrl  String?
   gamePlayUrl String?
   users       ListOfGames[]
-  genre       GameGenre[]
+  genre       GameGenre[]   
 }
 
 model ListOfGames {
@@ -55,7 +55,7 @@ model GameGenre{
   game        Games     @relation(fields:[gameId],references:[id],onDelete:Cascade,onUpdate:Cascade)
   gameId      Int
   genre      Genre    @relation(fields:[genreId],references:[id],onDelete:Cascade,onUpdate:Cascade)
-  genreId    Int
+  genreId    Int    
 }
 
 model Genre{

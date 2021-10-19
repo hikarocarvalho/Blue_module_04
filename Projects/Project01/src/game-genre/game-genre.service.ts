@@ -10,20 +10,11 @@ export class GameGenreService {
     game:{
       select:{
         id:true,
-        title:true,
-        folder:true,
-        description:true,
-        year:true,
-        score:true,
-        youtubeUrl:true,
-        gamePlayUrl:true,
       }
     },
     genre:{
       select:{
         id: true,
-        name: true,
-        game: true,
       }
     }
   }

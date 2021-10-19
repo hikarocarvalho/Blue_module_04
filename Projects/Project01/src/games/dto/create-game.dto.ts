@@ -1,4 +1,5 @@
-import { IsInt, IsNotEmpty, IsOptional, IsString } from "class-validator";
+import { Type } from "class-transformer";
+import { IsArray, IsInt, IsNotEmpty, IsOptional, IsString, ValidateNested } from "class-validator";
 import { CreateGameGenreDto } from "src/game-genre/dto/create-game-genre.dto";
 import { CreateListOfGameDto } from "src/list-of-games/dto/create-list-of-game.dto";
 import { Game } from "../entities/game.entity";
@@ -27,7 +28,9 @@ export class CreateGameDto extends Game{
     @IsOptional()
     @IsInt()
     users?:         CreateListOfGameDto[] | null;
-    @IsInt()
+    @ValidateNested({each:true})
+    @Type(()=>CreateGameGenreDto)
+    @IsArray()
     @IsOptional()
     genre?:        CreateGameGenreDto[];
 }

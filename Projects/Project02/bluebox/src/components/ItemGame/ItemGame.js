@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 
 export default function ItemGame(props){
     // jsx item implementation 
-    console.log(props);
     return (
        
         <Link to={"/description/"+props.id} className="link">

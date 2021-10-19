@@ -27,7 +27,7 @@ CREATE TABLE `Games` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `title` VARCHAR(191) NOT NULL,
     `folder` VARCHAR(191) NOT NULL,
-    `description` VARCHAR(191) NOT NULL,
+    `description` VARCHAR(250) NOT NULL,
     `year` YEAR NOT NULL,
     `score` INTEGER NOT NULL,
     `youtubeUrl` VARCHAR(191),
@@ -47,20 +47,20 @@ CREATE TABLE `ListOfGames` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `GameGender` (
+CREATE TABLE `GameGenre` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `gameId` INTEGER NOT NULL,
-    `genderId` INTEGER NOT NULL,
+    `genreId` INTEGER NOT NULL,
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `Gender` (
+CREATE TABLE `Genre` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(191) NOT NULL,
 
-    UNIQUE INDEX `Gender_name_key`(`name`),
+    UNIQUE INDEX `Genre_name_key`(`name`),
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -74,7 +74,7 @@ ALTER TABLE `ListOfGames` ADD CONSTRAINT `ListOfGames_userId_fkey` FOREIGN KEY (
 ALTER TABLE `ListOfGames` ADD CONSTRAINT `ListOfGames_gameId_fkey` FOREIGN KEY (`gameId`) REFERENCES `Games`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `GameGender` ADD CONSTRAINT `GameGender_gameId_fkey` FOREIGN KEY (`gameId`) REFERENCES `Games`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `GameGenre` ADD CONSTRAINT `GameGenre_gameId_fkey` FOREIGN KEY (`gameId`) REFERENCES `Games`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `GameGender` ADD CONSTRAINT `GameGender_genderId_fkey` FOREIGN KEY (`genderId`) REFERENCES `Gender`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `GameGenre` ADD CONSTRAINT `GameGenre_genreId_fkey` FOREIGN KEY (`genreId`) REFERENCES `Genre`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;

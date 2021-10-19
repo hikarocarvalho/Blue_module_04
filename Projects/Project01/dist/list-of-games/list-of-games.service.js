@@ -16,11 +16,6 @@ let ListOfGamesService = class ListOfGamesService {
     constructor(prisma) {
         this.prisma = prisma;
         this._include = {
-            user: {
-                select: {
-                    name: true,
-                }
-            },
             game: {
                 select: {
                     id: true,
@@ -31,14 +26,21 @@ let ListOfGamesService = class ListOfGamesService {
                     score: true,
                     youtubeUrl: true,
                     gamePlayUrl: true,
-                    genre: true,
+                    genre: {
+                        select: {
+                            genre: {
+                                select: {
+                                    name: true,
+                                }
+                            }
+                        }
+                    },
                 }
             }
         };
     }
     create(data) {
         return this.prisma.listOfGames.create({
-            include: this._include,
             data,
         });
     }
