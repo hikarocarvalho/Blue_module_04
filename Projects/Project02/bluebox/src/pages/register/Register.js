@@ -23,6 +23,9 @@ export default function Register(){
             email: userEmail,
             password: userPass,
             CPF: userCpf,
+            Perfil:{
+                title: userName,
+            }
         }
         // make an request for the back and
         const response = await Api.buildApiPostRequest(

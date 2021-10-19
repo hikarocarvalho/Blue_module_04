@@ -10,12 +10,12 @@ export class GamesService {
   private readonly _include={
     genre:{
       select:{
-        genre:true,
+        genre:true
       }
     }
   };
   create(dto: CreateGameDto) {
-    const data: Prisma.GamesCreateInput = {
+    const data: Prisma.GamesUncheckedCreateInput = {
       ...dto,
       users:{
         create: dto.users,
@@ -25,8 +25,8 @@ export class GamesService {
       }
     }
     return this.prisma.games.create({
-      include: this._include,
       data,
+      include: this._include
     });
   }
 

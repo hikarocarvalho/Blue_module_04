@@ -6,24 +6,33 @@ export declare class UsersService {
     private readonly prisma;
     constructor(prisma: PrismaService);
     private readonly _include;
-    create(dto: CreateUserDto): Prisma.Prisma__UsersClient<import(".prisma/client").Users & {
+    create(dto: CreateUserDto): Prisma.Prisma__UsersClient<import(".prisma/client").Users>;
+    findAll(): import(".prisma/client").PrismaPromise<(import(".prisma/client").Users & {
         games: {
             game: import(".prisma/client").Games;
         }[];
-        perfil: never;
-    }>;
-    findAll(): import(".prisma/client").PrismaPromise<import(".prisma/client").Users[]>;
+        Perfil: {
+            title: string;
+            image: string;
+        }[];
+    })[]>;
     findOne(id: number): Prisma.Prisma__UsersClient<import(".prisma/client").Users & {
         games: {
             game: import(".prisma/client").Games;
         }[];
-        perfil: never;
+        Perfil: {
+            title: string;
+            image: string;
+        }[];
     }>;
     update(id: number, data: UpdateUserDto): Prisma.Prisma__UsersClient<import(".prisma/client").Users & {
         games: {
             game: import(".prisma/client").Games;
         }[];
-        perfil: never;
+        Perfil: {
+            title: string;
+            image: string;
+        }[];
     }>;
     remove(id: number): Prisma.Prisma__UsersClient<import(".prisma/client").Users>;
 }

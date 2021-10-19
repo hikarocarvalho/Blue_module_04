@@ -21,7 +21,7 @@ let UsersService = class UsersService {
                     game: true
                 }
             },
-            perfil: {
+            Perfil: {
                 select: {
                     title: true,
                     image: true,
@@ -33,15 +33,16 @@ let UsersService = class UsersService {
         const data = Object.assign(Object.assign({}, dto), { games: {
                 create: dto.games
             }, Perfil: {
-                create: dto.perfil
+                create: dto.Perfil
             } });
         return this.prisma.users.create({
             data,
-            include: this._include
         });
     }
     findAll() {
-        return this.prisma.users.findMany();
+        return this.prisma.users.findMany({
+            include: this._include
+        });
     }
     findOne(id) {
         return this.prisma.users.findUnique({

@@ -26,7 +26,7 @@ export class CreateGameDto extends Game{
     gamePlayUrl?:   string | null;
     @IsOptional()
     @IsInt()
-    users?:         CreateListOfGameDto[];
+    users?:         CreateListOfGameDto[] | null;
     @IsInt()
     @IsOptional()
     genre?:        CreateGameGenreDto[];

@@ -13,7 +13,7 @@ export class UsersService {
         game:true
       }
     },
-    perfil:{
+    Perfil:{
       select:{
         title:true,
         image:true,
@@ -28,17 +28,19 @@ export class UsersService {
         create : dto.games
       },
       Perfil:{
-        create : dto.perfil
+        create : dto.Perfil
       }
     }
     return this.prisma.users.create({
       data,
-      include:this._include
     });
   }
 
   findAll() {
-    return this.prisma.users.findMany();
+    return this.prisma.users.findMany({
+      include: this._include
+    }
+    );
   }
 
   findOne(id: number) {

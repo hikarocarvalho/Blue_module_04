@@ -18,7 +18,7 @@ let GamesService = class GamesService {
         this._include = {
             genre: {
                 select: {
-                    genre: true,
+                    genre: true
                 }
             }
         };
@@ -30,8 +30,8 @@ let GamesService = class GamesService {
                 create: dto.genre
             } });
         return this.prisma.games.create({
-            include: this._include,
             data,
+            include: this._include
         });
     }
     findAll() {

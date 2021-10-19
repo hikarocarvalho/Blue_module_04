@@ -20,7 +20,7 @@ export class CreateUserDto extends User{
     @IsString()
     CPF:            string;
     @IsOptional()
-    games?:         CreateListOfGameDto[];
+    games?:         CreateListOfGameDto[] | null;
     @IsOptional()
-    perfil?:        CreatePerfilDto[];
+    Perfil?:        CreatePerfilDto[];
 }

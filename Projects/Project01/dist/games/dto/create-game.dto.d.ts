@@ -9,6 +9,6 @@ export declare class CreateGameDto extends Game {
     score: number;
     youtubeUrl?: string | null;
     gamePlayUrl?: string | null;
-    users?: CreateListOfGameDto[];
+    users?: CreateListOfGameDto[] | null;
     genre?: CreateGameGenreDto[];
 }

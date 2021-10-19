@@ -9,6 +9,6 @@ export class Game{
     score:          number;
     youtubeUrl?:    string | null;
     gamePlayUrl?:   string | null;
-    users?:         ListOfGames[];
+    users?:         ListOfGames[] | null;
     genre?:        GameGenre[];
 }

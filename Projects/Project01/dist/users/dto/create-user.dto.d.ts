@@ -7,6 +7,6 @@ export declare class CreateUserDto extends User {
     email: string;
     password: string;
     CPF: string;
-    games?: CreateListOfGameDto[];
-    perfil?: CreatePerfilDto[];
+    games?: CreateListOfGameDto[] | null;
+    Perfil?: CreatePerfilDto[];
 }
