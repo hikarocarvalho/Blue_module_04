@@ -8,11 +8,6 @@ export declare class ListOfGamesController {
     findAll(id: number): import(".prisma/client").PrismaPromise<(import(".prisma/client").ListOfGames & {
         game: {
             id: number;
-            genre: {
-                genre: {
-                    name: string;
-                };
-            }[];
             title: string;
             folder: string;
             description: string;
@@ -20,6 +15,11 @@ export declare class ListOfGamesController {
             score: number;
             youtubeUrl: string;
             gamePlayUrl: string;
+            genre: {
+                genre: {
+                    name: string;
+                };
+            }[];
         };
     })[]>;
     findOne(id: number): import(".prisma/client").Prisma.Prisma__ListOfGamesClient<import(".prisma/client").ListOfGames>;

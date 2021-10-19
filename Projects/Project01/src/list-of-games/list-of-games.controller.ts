@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, HttpStatus, HttpCode } from '@nestjs/common';
 import { ListOfGamesService } from './list-of-games.service';
 import { CreateListOfGameDto } from './dto/create-list-of-game.dto';
 import { UpdateListOfGameDto } from './dto/update-list-of-game.dto';
@@ -28,6 +28,7 @@ export class ListOfGamesController {
   }
 
   @Delete(':id')
+  @HttpCode(HttpStatus.NO_CONTENT)
   remove(@Param('id') id: number) {
     return this.listOfGamesService.remove(id);
   }

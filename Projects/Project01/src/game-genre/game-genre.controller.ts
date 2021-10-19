@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, HttpStatus, HttpCode } from '@nestjs/common';
 import { GameGenreService } from './game-genre.service';
 import { CreateGameGenreDto } from './dto/create-game-genre.dto';
 import { UpdateGameGenreDto } from './dto/update-game-genre.dto';
@@ -28,6 +28,7 @@ export class GameGenreController {
   }
 
   @Delete(':id')
+  @HttpCode(HttpStatus.NO_CONTENT)
   remove(@Param('id') id: number) {
     return this.gameGenreService.remove(id);
   }
