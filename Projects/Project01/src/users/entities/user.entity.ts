@@ -8,5 +8,5 @@ export class User{
     password:       string;
     CPF:            string;
     games?:         ListOfGames[];
-    Perfil?:        Perfil[];
+    perfil?:        Perfil[];
 }

@@ -22,5 +22,5 @@ export class CreateUserDto extends User{
     @IsOptional()
     games?:         CreateListOfGameDto[];
     @IsOptional()
-    Perfil?:        CreatePerfilDto[];
+    perfil?:        CreatePerfilDto[];
 }

@@ -23,7 +23,12 @@ let GamesService = class GamesService {
             }
         };
     }
-    create(data) {
+    create(dto) {
+        const data = Object.assign(Object.assign({}, dto), { users: {
+                create: dto.users,
+            }, genre: {
+                create: dto.genre
+            } });
         return this.prisma.games.create({
             include: this._include,
             data,

@@ -1,3 +1,4 @@
+import { Prisma } from '.prisma/client';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateGameDto } from './dto/create-game.dto';
 import { UpdateGameDto } from './dto/update-game.dto';
@@ -5,7 +6,7 @@ export declare class GamesService {
     private readonly prisma;
     constructor(prisma: PrismaService);
     private readonly _include;
-    create(data: CreateGameDto): import(".prisma/client").Prisma.Prisma__GamesClient<import(".prisma/client").Games & {
+    create(dto: CreateGameDto): Prisma.Prisma__GamesClient<import(".prisma/client").Games & {
         genre: {
             genre: import(".prisma/client").Genre;
         }[];
@@ -15,15 +16,15 @@ export declare class GamesService {
             genre: import(".prisma/client").Genre;
         }[];
     })[]>;
-    findOne(id: number): import(".prisma/client").Prisma.Prisma__GamesClient<import(".prisma/client").Games & {
+    findOne(id: number): Prisma.Prisma__GamesClient<import(".prisma/client").Games & {
         genre: {
             genre: import(".prisma/client").Genre;
         }[];
     }>;
-    update(id: number, data: UpdateGameDto): import(".prisma/client").Prisma.Prisma__GamesClient<import(".prisma/client").Games & {
+    update(id: number, data: UpdateGameDto): Prisma.Prisma__GamesClient<import(".prisma/client").Games & {
         genre: {
             genre: import(".prisma/client").Genre;
         }[];
     }>;
-    remove(id: number): import(".prisma/client").Prisma.Prisma__GamesClient<import(".prisma/client").Games>;
+    remove(id: number): Prisma.Prisma__GamesClient<import(".prisma/client").Games>;
 }

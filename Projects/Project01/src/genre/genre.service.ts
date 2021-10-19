@@ -1,3 +1,4 @@
+import { Prisma } from '.prisma/client';
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateGenreDto } from './dto/create-genre.dto';
@@ -13,7 +14,13 @@ export class GenreService {
       }
     }
   };
-  create(data: CreateGenreDto) {
+  create(dto: CreateGenreDto) {
+    const data: Prisma.GenreCreateInput = {
+      ...dto,
+      game: {
+        create: dto.game
+      }
+    }
     return this.prisma.genre.create({
       include: this._include,
       data,

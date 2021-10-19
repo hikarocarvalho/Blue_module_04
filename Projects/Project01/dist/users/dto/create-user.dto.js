@@ -48,6 +48,6 @@ __decorate([
 __decorate([
     (0, class_validator_1.IsOptional)(),
     __metadata("design:type", Array)
-], CreateUserDto.prototype, "Perfil", void 0);
+], CreateUserDto.prototype, "perfil", void 0);
 exports.CreateUserDto = CreateUserDto;
 //# sourceMappingURL=create-user.dto.js.map

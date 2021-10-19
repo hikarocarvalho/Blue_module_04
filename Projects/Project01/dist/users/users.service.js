@@ -29,9 +29,15 @@ let UsersService = class UsersService {
             },
         };
     }
-    create(data) {
+    create(dto) {
+        const data = Object.assign(Object.assign({}, dto), { games: {
+                create: dto.games
+            }, Perfil: {
+                create: dto.perfil
+            } });
         return this.prisma.users.create({
-            data
+            data,
+            include: this._include
         });
     }
     findAll() {
