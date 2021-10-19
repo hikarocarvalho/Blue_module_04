@@ -4,38 +4,31 @@ import ProfileItem from "../../components/profileItem/ProfileItem";
 import "./Perfil.css";
 export default function Perfil(){
     const[acounts,setAcounts] = useState([]);
-    const items =[
-            "translate3d(-100px, 0px, 100px)",
-            "translate3d(-50px, 0px, 50px)",
-            "translate3d(0px, 0px, 0px)",
-            "translate3d(50px, 0px, 50px)",
-            "translate3d(100px, 0px, 100px)"
-    ];
+    
     useEffect(()=>{
         const acount = [
             {
-                transform:items[0],
+                transform:"translate3d(-100px, 0px, 100px)",
                 height:"70%",
                 zIndex:1
             },{
-                transform:items[1],
+                transform:"translate3d(-50px, 0px, 50px)",
                 height:"80%",
                 zIndex:2
             },{
-                transform:items[2],
+                transform:"translate3d(0px, 0px, 0px)",
                 height:"90%",
                 zIndex:3
             },{
-                transform:items[3],
+                transform:"translate3d(50px, 0px, 50px)",
                 height:"80%",
                 zIndex:2
             },{
-                transform:items[4],
+                transform:"translate3d(100px, 0px, 100px)",
                 height:"70%",
                 zIndex:1
             }
-    ]
-    console.log(items)
+        ];
     setAcounts(acount);
     },[]) 
     const prevPerfil=()=>{
