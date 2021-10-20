@@ -1,5 +1,5 @@
 // this is the register page, where you make the new account register
-import React from "react";
+import React,{ useState } from "react";
 import "./Register.css";
 import Logo from "./../../logo.png";
 import Form from "../../components/fom/Form";
@@ -7,7 +7,13 @@ import Input from "../../components/input/Input";
 import ImageContainer from "../../components/imagecontainer/ImageContainer";
 import Button from "../../components/button/Button";
 import { Api } from "../../Api/Api";
-export default function Register(){
+import Message from "../../components/message/Message";
+export default function Register(props){
+    const [message,setMessage] = useState({
+        text:"",
+        level:"",
+        style:{transform: "translateY(-100px)",}
+    });
     // create function
     const create = async (event)=>{
         event.preventDefault();
@@ -16,7 +22,13 @@ export default function Register(){
         const userCpf = event.target.inputCpf.value;
         const userEmail = event.target.inputEmail.value;
         const userPass = event.target.inputPass.value;
-        //create a PauLoad model
+        // create a message variable
+        const messageView = {
+            text:"",
+            level:"",
+            style:{}
+        };
+        //create a PayLoad model
         const payLoad = {
             name: userName,
             lastName: userLastName,
@@ -32,8 +44,40 @@ export default function Register(){
             Api.createUserUrl(),
             payLoad
         )
-        
-        console.log(response);
+        switch (response.status){
+            case 201:
+                console.log("user created with sucess!!! ");
+                messageView.text = response.statusText;
+                messageView.level = "ok";
+                break;
+            case 204:
+                console.log("database without data values!!!")
+                console.log(JSON.stringify(response.statusText));
+                messageView.text = response.statusText;
+                messageView.level = "alert";
+                break;
+            default:
+                console.log(response.status);
+                console.log("error to register new user");
+                console.log(JSON.stringify(response.statusText));
+                messageView.text = response.statusText;
+                messageView.level = "danger";
+                break;
+        }
+        messageView.style = {
+           transform:"translateY(0px)",
+        }
+        setMessage(messageView);
+    }
+    if(JSON.stringify(message.style)!==JSON.stringify({transform: "translateY(-100px)",})){
+        console.log("teste")
+        setTimeout(()=>(
+            setMessage({
+                text:"",
+                level:"",
+                style:{transform: "translateY(-100px)",}
+            })
+        ), 3000);
     }
     return (
         <section className="box">
@@ -47,6 +91,9 @@ export default function Register(){
                     <Input inputType="text" inputName="inputPassAgain" inputHold="Confirm your Password"></Input>
                     <Button> Register </Button>
             </Form>
+            <Message level={message.level} messageText={message.text} style={message.style}>
+
+            </Message>
         </section>
     );
 }

@@ -7,6 +7,7 @@ import ContentGenre from "../../components/contentGenre/ContentGenre";
 import { Api } from "../../Api/Api";
 import "./Store.css";
 import ItemGame from "../../components/ItemGame/ItemGame";
+import { Link } from "react-router-dom";
 export default function Store(){
     // Create one variable to implements useState
     const [games,setGames] = useState([]);
@@ -40,6 +41,9 @@ export default function Store(){
                 </ContentLibrary>
             </BoxLibrary>
             <BoxLibrary classname={"items-library"}>
+                <Link className="newGame" to={"/creategame"}>
+                    Register A New Game
+                </Link>
                 <Label text={"User Games Library"} />
                 <ContentLibrary classname={"content-ext"}>
                 {/* start maping the games genders list */}

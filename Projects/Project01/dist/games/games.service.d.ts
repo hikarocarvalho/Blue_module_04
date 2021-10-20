@@ -7,21 +7,33 @@ export declare class GamesService {
     constructor(prisma: PrismaService);
     private readonly _include;
     create(dto: CreateGameDto): Prisma.Prisma__GamesClient<import(".prisma/client").Games & {
+        users: {
+            id: number;
+        }[];
         genre: {
             genre: import(".prisma/client").Genre;
         }[];
     }>;
     findAll(): import(".prisma/client").PrismaPromise<(import(".prisma/client").Games & {
+        users: {
+            id: number;
+        }[];
         genre: {
             genre: import(".prisma/client").Genre;
         }[];
     })[]>;
     findOne(id: number): Prisma.Prisma__GamesClient<import(".prisma/client").Games & {
+        users: {
+            id: number;
+        }[];
         genre: {
             genre: import(".prisma/client").Genre;
         }[];
     }>;
     update(id: number, data: UpdateGameDto): Prisma.Prisma__GamesClient<import(".prisma/client").Games & {
+        users: {
+            id: number;
+        }[];
         genre: {
             genre: import(".prisma/client").Genre;
         }[];

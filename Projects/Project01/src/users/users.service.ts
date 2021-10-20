@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-
+import * as bcrypt from 'bcrypt';
 @Injectable()
 export class UsersService {
   constructor (private readonly prisma:PrismaService){}
@@ -21,9 +21,11 @@ export class UsersService {
     },
 
   };
-  create(dto: CreateUserDto) {
+  
+  async create(dto: CreateUserDto) {
     const data : Prisma.UsersCreateInput = {
       ...dto,
+      password: await bcrypt.hash(dto.password,10),
       games:{
         create : dto.games
       },
@@ -31,16 +33,25 @@ export class UsersService {
         create : dto.Perfil
       }
     }
-    return this.prisma.users.create({
+    const createUser = this.prisma.users.create({
       data,
     });
+    return {
+      ...createUser,
+      password:undefined,
+    };
   }
 
   findAll() {
-    return this.prisma.users.findMany({
-      include: this._include
-    }
-    );
+      return "You can't do that, this server have some secure about user informations";
+  }
+
+  findById(id: number){
+    return this.prisma.users.findUnique({ where: { id } });
+  }
+
+  findByEmail(email: string){
+    return this.prisma.users.findUnique({ where: { email } });
   }
 
   findOne(id: number) {

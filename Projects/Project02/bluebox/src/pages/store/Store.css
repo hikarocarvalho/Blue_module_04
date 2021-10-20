@@ -17,3 +17,18 @@
     top: 0;
     left: 0;
 }
+.box-library .newGame{
+    box-shadow:0 0 5px 2px black;
+    border-radius: 10px;
+    background-color: #264653;
+    text-decoration: none;
+    width: 90%;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    color:#e9c46a;
+}
+.box-library .newGame:hover{
+    box-shadow:0 0 5px 2px #e9c46a;
+}

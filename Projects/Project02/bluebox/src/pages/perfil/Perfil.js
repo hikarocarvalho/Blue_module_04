@@ -31,7 +31,8 @@ export default function Perfil(){
         ];
     setAcounts(acount);
     },[]) 
-    const prevPerfil=()=>{
+    const prevPerfil=(event)=>{
+        event.preventDefault();
         const acount = [];
         for(let count = 1; count<5; count++){
             acount.push(acounts[count]);
@@ -39,7 +40,8 @@ export default function Perfil(){
         acount.push(acounts[0]);
         setAcounts(acount);
     }
-    const nextPerfil=()=>{
+    const nextPerfil=(event)=>{
+        event.preventDefault();
         const acount = [];
         acount.push(acounts[4]);
         for(let count = 0; count<4; count++){

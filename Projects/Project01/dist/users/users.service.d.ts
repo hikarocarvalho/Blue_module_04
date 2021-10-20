@@ -6,7 +6,7 @@ export declare class UsersService {
     private readonly prisma;
     constructor(prisma: PrismaService);
     private readonly _include;
-    create(dto: CreateUserDto): Prisma.Prisma__UsersClient<import(".prisma/client").Users>;
+    create(dto: CreateUserDto): Promise<import(".prisma/client").Users>;
     findAll(): import(".prisma/client").PrismaPromise<(import(".prisma/client").Users & {
         games: {
             game: import(".prisma/client").Games;

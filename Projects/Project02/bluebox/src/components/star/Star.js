@@ -6,26 +6,12 @@ export default function Label(props){
         <div className="star">
             <div className={props.classname}>
                 <div className="one">
-                
                 </div>
                 <div className="two">
-                
                 </div>
                 <div className="three">
-                    
                 </div>
             </div>
-                <div className="star-inside">
-                <div className="one">
-                
-                </div>
-                <div className="two">
-                
-                </div>
-                <div className="three">
-                
-            </div>
-        </div>
         </div>
     );
 }

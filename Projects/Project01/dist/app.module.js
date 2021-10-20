@@ -17,11 +17,12 @@ const perfil_module_1 = require("./perfil/perfil.module");
 const genre_module_1 = require("./genre/genre.module");
 const list_of_games_module_1 = require("./list-of-games/list-of-games.module");
 const game_genre_module_1 = require("./game-genre/game-genre.module");
+const auth_module_1 = require("./auth/auth.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [users_module_1.UsersModule, games_module_1.GamesModule, perfil_module_1.PerfilModule, genre_module_1.GenreModule, list_of_games_module_1.ListOfGamesModule, game_genre_module_1.GameGenreModule],
+        imports: [users_module_1.UsersModule, games_module_1.GamesModule, perfil_module_1.PerfilModule, genre_module_1.GenreModule, list_of_games_module_1.ListOfGamesModule, game_genre_module_1.GameGenreModule, auth_module_1.AuthModule],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService, prisma_service_1.PrismaService],
     })

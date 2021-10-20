@@ -8,6 +8,12 @@ import { UpdateGameDto } from './dto/update-game.dto';
 export class GamesService {
   constructor (private readonly prisma:PrismaService){}
   private readonly _include={
+    users:{
+      select:{
+          id:true
+        }
+      
+    },
     genre:{
       select:{
         genre:true
@@ -21,9 +27,9 @@ export class GamesService {
         create: dto.users,
       },
       genre:{
-        create:dto.genre
+        create: dto.genre
       }
-    }
+    };
     return this.prisma.games.create({
       data,
       include: this._include
@@ -44,6 +50,7 @@ export class GamesService {
   }
 
   update(id: number, data: UpdateGameDto) {
+   
     return this.prisma.games.update({
       where:      {id},
       data,

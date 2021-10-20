@@ -8,13 +8,13 @@ export declare class ListOfGamesService {
     create(data: CreateListOfGameDto): import(".prisma/client").Prisma.Prisma__ListOfGamesClient<import(".prisma/client").ListOfGames>;
     findAll(id: number): import(".prisma/client").PrismaPromise<(import(".prisma/client").ListOfGames & {
         game: {
+            title: string;
             id: number;
             genre: {
                 genre: {
                     name: string;
                 };
             }[];
-            title: string;
             folder: string;
             description: string;
             year: number;

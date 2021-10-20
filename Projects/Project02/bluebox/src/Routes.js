@@ -8,6 +8,7 @@ import Library from "./pages/library/Library";
 import Store from "./pages/store/Store";
 import NotFound from "./pages/notFound/NotFound";
 import Description from "./pages/description/Description";
+import CreateGame from "./pages/createGame/CreateGame";
 export default function Routes(){
     return(
         <Switch>
@@ -31,6 +32,9 @@ export default function Routes(){
             </Route>
             <Route exact path="/description/:id">
                <Description></Description>
+            </Route>
+            <Route exact path="/creategame">
+                <CreateGame></CreateGame>
             </Route>
             <Route path="*">
                 <NotFound></NotFound>
