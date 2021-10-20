@@ -1,5 +1,4 @@
 import { IsNotEmpty, IsOptional, IsString } from "class-validator";
-import { Prisma } from "@prisma/client";
 import { User } from "../entities/user.entity";
 import { CreateListOfGameDto } from "src/list-of-games/dto/create-list-of-game.dto";
 import { CreatePerfilDto } from "src/perfil/dto/create-perfil.dto";

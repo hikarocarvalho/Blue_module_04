@@ -6,16 +6,17 @@ export declare class UsersService {
     private readonly prisma;
     constructor(prisma: PrismaService);
     private readonly _include;
-    create(dto: CreateUserDto): Promise<import(".prisma/client").Users>;
-    findAll(): import(".prisma/client").PrismaPromise<(import(".prisma/client").Users & {
-        games: {
-            game: import(".prisma/client").Games;
-        }[];
-        Perfil: {
-            title: string;
-            image: string;
-        }[];
-    })[]>;
+    create(dto: CreateUserDto): Promise<{
+        password: any;
+        id: number;
+        name: string;
+        lastName: string;
+        email: string;
+        CPF: string;
+    }>;
+    findAll(): string;
+    findById(id: number): Prisma.Prisma__UsersClient<import(".prisma/client").Users>;
+    findByEmail(email: string): Prisma.Prisma__UsersClient<import(".prisma/client").Users>;
     findOne(id: number): Prisma.Prisma__UsersClient<import(".prisma/client").Users & {
         games: {
             game: import(".prisma/client").Games;

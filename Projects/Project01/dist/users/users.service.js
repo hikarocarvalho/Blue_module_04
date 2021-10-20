@@ -36,10 +36,10 @@ let UsersService = class UsersService {
             }, Perfil: {
                 create: dto.Perfil
             } });
-        const createUser = this.prisma.users.create({
+        const createdUser = await this.prisma.users.create({
             data,
         });
-        return Object.assign(Object.assign({}, createUser), { password: undefined });
+        return Object.assign(Object.assign({}, createdUser), { password: undefined });
     }
     findAll() {
         return "You can't do that, this server have some secure about user informations";

@@ -3,6 +3,7 @@ import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { Observable } from 'node_modules/rxjs/dist/types';
 import * as bcrypt from 'bcrypt';
 @Injectable()
 export class UsersService {
@@ -32,12 +33,12 @@ export class UsersService {
       Perfil:{
         create : dto.Perfil
       }
-    }
-    const createUser = this.prisma.users.create({
+    };
+    const createdUser = await this.prisma.users.create({
       data,
     });
     return {
-      ...createUser,
+      ...createdUser,
       password:undefined,
     };
   }
