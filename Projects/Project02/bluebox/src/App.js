@@ -12,7 +12,7 @@ function App() {
         <Link to="/perfil">perfil</Link>
         <Link to="/manager">manager</Link>
         <Link to="/library">library</Link>
-        <Link to="/store">store</Link>
+        <Link to="/login">store</Link>
         <Link to="/description/0">description</Link>
         <Routes>
 

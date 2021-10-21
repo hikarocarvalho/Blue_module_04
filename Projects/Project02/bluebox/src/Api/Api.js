@@ -1,5 +1,12 @@
+import { JwtHandler } from "../jwt-handler/JwtHandleer";
 export const Api = {
     baseUrl:"http://localhost:3001",
+    // Auth Header
+    authHeader: () => ({
+        Authorization: "Bearer " + JwtHandler.getJwt(),
+    }),
+    //end points login
+    LoginVerifyUrl: ()=> Api.baseUrl+"/login",
     //end points users
     readAllUsersUrl: ()=> Api.baseUrl+"/users",
     createUserUrl: ()=> Api.baseUrl+"/users",
@@ -20,9 +27,10 @@ export const Api = {
     //end points Games user list
     readAllGamesListUrl: (id)=> Api.baseUrl+"/list-of-games/"+id,
     // get method
-    buildApiGetRequest: url =>
+    buildApiGetRequest: (url,auth) =>
         fetch(url,{
             method:"GET",
+            headers: auth? new Headers(Api.authHeader()): undefined,
         }),
     // Post method
     buildApiPostRequest: (url,body) =>

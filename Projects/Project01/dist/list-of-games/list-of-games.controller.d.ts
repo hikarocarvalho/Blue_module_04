@@ -1,25 +1,26 @@
 import { ListOfGamesService } from './list-of-games.service';
 import { CreateListOfGameDto } from './dto/create-list-of-game.dto';
 import { UpdateListOfGameDto } from './dto/update-list-of-game.dto';
+import { User } from 'src/users/entities/user.entity';
 export declare class ListOfGamesController {
     private readonly listOfGamesService;
     constructor(listOfGamesService: ListOfGamesService);
     create(createListOfGameDto: CreateListOfGameDto): import(".prisma/client").Prisma.Prisma__ListOfGamesClient<import(".prisma/client").ListOfGames>;
-    findAll(id: number): import(".prisma/client").PrismaPromise<(import(".prisma/client").ListOfGames & {
+    findAll(currentUser: User): import(".prisma/client").PrismaPromise<(import(".prisma/client").ListOfGames & {
         game: {
-            title: string;
             id: number;
-            genre: {
-                genre: {
-                    name: string;
-                };
-            }[];
+            title: string;
             folder: string;
             description: string;
             year: number;
             score: number;
             youtubeUrl: string;
             gamePlayUrl: string;
+            genre: {
+                genre: {
+                    name: string;
+                };
+            }[];
         };
     })[]>;
     findOne(id: number): import(".prisma/client").Prisma.Prisma__ListOfGamesClient<import(".prisma/client").ListOfGames>;

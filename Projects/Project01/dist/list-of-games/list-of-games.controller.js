@@ -17,6 +17,8 @@ const common_1 = require("@nestjs/common");
 const list_of_games_service_1 = require("./list-of-games.service");
 const create_list_of_game_dto_1 = require("./dto/create-list-of-game.dto");
 const update_list_of_game_dto_1 = require("./dto/update-list-of-game.dto");
+const user_entity_1 = require("../users/entities/user.entity");
+const currentUser_decorator_1 = require("../decorators/currentUser.decorator");
 let ListOfGamesController = class ListOfGamesController {
     constructor(listOfGamesService) {
         this.listOfGamesService = listOfGamesService;
@@ -24,8 +26,8 @@ let ListOfGamesController = class ListOfGamesController {
     create(createListOfGameDto) {
         return this.listOfGamesService.create(createListOfGameDto);
     }
-    findAll(id) {
-        return this.listOfGamesService.findAll(id);
+    findAll(currentUser) {
+        return this.listOfGamesService.findAll(currentUser.id);
     }
     findOne(id) {
         return this.listOfGamesService.findOne(id);
@@ -45,10 +47,10 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], ListOfGamesController.prototype, "create", null);
 __decorate([
-    (0, common_1.Get)(':id'),
-    __param(0, (0, common_1.Param)('id')),
+    (0, common_1.Get)(),
+    __param(0, (0, currentUser_decorator_1.CurrentUser)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number]),
+    __metadata("design:paramtypes", [user_entity_1.User]),
     __metadata("design:returntype", void 0)
 ], ListOfGamesController.prototype, "findAll", null);
 __decorate([

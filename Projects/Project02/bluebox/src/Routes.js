@@ -9,36 +9,22 @@ import Store from "./pages/store/Store";
 import NotFound from "./pages/notFound/NotFound";
 import Description from "./pages/description/Description";
 import CreateGame from "./pages/createGame/CreateGame";
+import GuardedRoute from "./components/GuardedRoute/GuardedRoute";
 export default function Routes(){
     return(
         <Switch>
-            <Route exact path="/">
+            <GuardedRoute exact path="/" component={Store} />
+            <Route exact path="/register" component={Register} />
+             
+            <GuardedRoute exact path="/perfil" component={Perfil} />
+            <GuardedRoute exact path="/library" component={Library} />
+            <Route exact path="/login">
                 <Login></Login>
             </Route>
-            <Route exact path="/register">
-                <Register></Register>
-            </Route>
-            <Route exact path="/perfil">
-                <Perfil></Perfil>
-            </Route>
-            <Route exact path="/library">
-                <Library></Library>
-            </Route>
-            <Route exact path="/store">
-                <Store></Store>
-            </Route>
-            <Route exact path="/manager">
-                <Manager></Manager>
-            </Route>
-            <Route exact path="/description/:id">
-               <Description></Description>
-            </Route>
-            <Route exact path="/creategame">
-                <CreateGame></CreateGame>
-            </Route>
-            <Route path="*">
-                <NotFound></NotFound>
-            </Route>
+            <GuardedRoute exact path="/manager" component={Manager} />
+            <GuardedRoute exact path="/description/:id" component={Description} />
+            <GuardedRoute exact path="/creategame" component={CreateGame} />
+            <Route path="*" component={NotFound} />
         </Switch>
     );
 }

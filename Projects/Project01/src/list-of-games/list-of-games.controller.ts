@@ -2,6 +2,8 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, HttpStatus, HttpCode
 import { ListOfGamesService } from './list-of-games.service';
 import { CreateListOfGameDto } from './dto/create-list-of-game.dto';
 import { UpdateListOfGameDto } from './dto/update-list-of-game.dto';
+import { User } from 'src/users/entities/user.entity';
+import { CurrentUser } from 'src/decorators/currentUser.decorator';
 
 @Controller('list-of-games')
 export class ListOfGamesController {
@@ -12,9 +14,9 @@ export class ListOfGamesController {
     return this.listOfGamesService.create(createListOfGameDto);
   }
 
-  @Get(':id')
-  findAll(@Param('id') id: number) {
-    return this.listOfGamesService.findAll(id);
+  @Get()
+  findAll(@CurrentUser() currentUser:User) {
+    return this.listOfGamesService.findAll(currentUser.id);
   }
 
   @Get(':id')

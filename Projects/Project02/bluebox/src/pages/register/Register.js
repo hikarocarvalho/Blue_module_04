@@ -46,20 +46,14 @@ export default function Register(props){
         )
         switch (response.status){
             case 201:
-                console.log("user created with sucess!!! ");
                 messageView.text = response.statusText;
                 messageView.level = "ok";
                 break;
             case 204:
-                console.log("database without data values!!!")
-                console.log(JSON.stringify(response.statusText));
                 messageView.text = response.statusText;
                 messageView.level = "alert";
                 break;
             default:
-                console.log(response.status);
-                console.log("error to register new user");
-                console.log(JSON.stringify(response.statusText));
                 messageView.text = response.statusText;
                 messageView.level = "danger";
                 break;

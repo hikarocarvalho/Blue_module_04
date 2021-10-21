@@ -9,10 +9,18 @@ import { GenreModule } from './genre/genre.module';
 import { ListOfGamesModule } from './list-of-games/list-of-games.module';
 import { GameGenreModule } from './game-genre/game-genre.module';
 import { AuthModule } from './auth/auth.module';
-
+import { APP_GUARD } from '@nestjs/core';
+import { JwtAuthGuard } from './auth/jwt-auth.guard';
 @Module({
   imports: [UsersModule, GamesModule, PerfilModule, GenreModule, ListOfGamesModule, GameGenreModule, AuthModule],
   controllers: [AppController],
-  providers: [AppService, PrismaService],
+  providers: [
+    AppService,
+    {
+      provide: APP_GUARD,
+      useClass: JwtAuthGuard,
+    }, 
+    PrismaService
+  ],
 })
 export class AppModule {}
